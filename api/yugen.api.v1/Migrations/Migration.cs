@@ -1,7 +1,11 @@
-﻿using System;
+﻿using MongoDB.Driver;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using yugen.api.v1.Models;
 
 namespace yugen.api.v1.Migrations
 {
@@ -10,5 +14,34 @@ namespace yugen.api.v1.Migrations
     /// </summary>
     public class Migration
     {
+        private MongoDB.Driver.MongoClient _client;
+        private string _dbname;
+        private IMongoDatabase _db;
+        public Migration(MongoDB.Driver.MongoClient client, string dbname)
+        {
+            _client = client;
+            _dbname = dbname;
+        }
+
+        public IMongoDatabase CreateAsync()
+        {
+            _db = _client.GetDatabase(_dbname);
+            InsertDataAsync<WorldDTO>("worlds");
+            InsertDataAsync<BookDTO>("books");
+            return _db;
+        }
+
+        private void InsertDataAsync<T>(string inputFileName)
+        {
+            _db.DropCollection(inputFileName);
+            _db.CreateCollection(inputFileName);
+            var collection = _db.GetCollection<T>(inputFileName);
+            using (var streamReader = new StreamReader("Migrations/" + inputFileName + ".json"))
+            {
+                string json = streamReader.ReadToEnd();
+                List<T> items = JsonConvert.DeserializeObject<List<T>>(json);
+                collection.InsertMany(items);
+            }
+        }
     }
 }

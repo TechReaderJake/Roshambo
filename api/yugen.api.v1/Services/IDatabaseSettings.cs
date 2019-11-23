@@ -12,5 +12,6 @@ namespace yugen.api.v1.Services
     {
         string ConnectionString { get; set; }
         string DatabaseName { get; set; }
+        bool SeedDb { get; set; }
     }
 }

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using yugen.api.v1.Migrations;
 
 namespace yugen.api.v1.Models
 {
@@ -17,7 +18,15 @@ namespace yugen.api.v1.Models
         {
             var setting = settings ?? throw new ArgumentNullException("Settings");
             var client = new MongoClient(setting.ConnectionString);
-            _db = client.GetDatabase(setting.DatabaseName);
+            if (setting.SeedDb)
+            {
+                var migrate = new Migration(client, setting.DatabaseName);
+                _db = migrate.CreateAsync();
+            }
+            else
+            {
+                _db = client.GetDatabase(setting.DatabaseName);
+            }
         }
 
         public IMongoDatabase DB()
