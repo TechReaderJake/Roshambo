@@ -27,7 +27,7 @@ namespace yugen.api.v1.Controllers
         }
 
         // GET: api/Books/5d7617ab1662733dd0d2927b
-        [HttpGet("{id:length(24)}", Name = "GetById")]
+        [HttpGet("{id:length(24)}", Name = "GetByBookId")]
         public ActionResult<BookDTO> GetBook(string id)
         {
             return _work.Books.Get(id);

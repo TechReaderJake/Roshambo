@@ -18,9 +18,8 @@ namespace yugen.api.v1.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
 
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string WorldID { get; set; }
+        //[BsonRepresentation(BsonType.ObjectId)]
+        //public string WorldID { get; set; }
 
         [BsonElement("title")]
         public string Title { get; set; }

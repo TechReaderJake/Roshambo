@@ -13,7 +13,7 @@ namespace yugen.api.v1.Services.Repositories
     /// </summary>
     public class BookRepository : Repository<BookDTO, string>, IBookRepository
     {
-        private const string Collection = "Books";
+        private const string Collection = "books";
         public BookRepository(AppDbContext context) : base(context, Collection)
         {
             /* 

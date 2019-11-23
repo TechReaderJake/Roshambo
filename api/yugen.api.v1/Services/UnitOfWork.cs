@@ -21,6 +21,7 @@ namespace yugen.api.v1.Services
         {
             _context = context;
             Books = new BookRepository(_context);
+            Worlds = new WorldRepository(_context);
         }
 
         // Not Used Currently
