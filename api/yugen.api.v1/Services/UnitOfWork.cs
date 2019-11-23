@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using books.api.Models;
-using books.api.Services.Repositories;
+using yugen.api.v1.Models;
+using yugen.api.v1.Services.Repositories;
 
-namespace books.api.Services
+namespace yugen.api.v1.Services
 {
     /// <summary>
     /// Implementation of the IUnitOfWork to use the AppDbContext
@@ -14,6 +14,7 @@ namespace books.api.Services
     public class UnitOfWork : IUnitOfWork
     {
         public IBookRepository Books { get; private set; }
+        public IWorldRepository Worlds { get; private set; }
         private AppDbContext _context { get; set; }
 
         public UnitOfWork(AppDbContext context)

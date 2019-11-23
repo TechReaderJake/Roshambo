@@ -1,4 +1,4 @@
-﻿using books.api.Services.Repositories;
+﻿using yugen.api.v1.Services.Repositories;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System;
@@ -6,17 +6,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace books.api.Models
+namespace yugen.api.v1.Models
 {
     /// <summary>
     /// Book DTO object for the API to use.
     /// </summary>
     /// <example>var book = new Book();</example>
-    public class Book : IEntity<string>
+    public class BookDTO : IEntity<string>
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
+
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string WorldID { get; set; }
+
         [BsonElement("title")]
         public string Title { get; set; }
         [BsonElement("description")]

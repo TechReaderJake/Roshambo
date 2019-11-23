@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using books.api.Models;
-using books.api.Services;
-using books.api.Services.Api;
+using yugen.api.v1.Models;
+using yugen.api.v1.Services;
+using yugen.api.v1.Services.Api;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace books.api.Controllers
+namespace yugen.api.v1.Controllers
 {
     /// <summary>
     /// API controller for Books. Creates endpoints to send requests to
@@ -28,14 +28,14 @@ namespace books.api.Controllers
 
         // GET: api/Books/5d7617ab1662733dd0d2927b
         [HttpGet("{id:length(24)}", Name = "GetById")]
-        public ActionResult<Book> GetBook(string id)
+        public ActionResult<BookDTO> GetBook(string id)
         {
             return _work.Books.Get(id);
         }
 
         // GET: api/Books
         [HttpGet]
-        public ActionResult<List<Book>> GetBooks()
+        public ActionResult<List<BookDTO>> GetBooks()
         {
             return _work.Books.GetAll().ToList();
         }
@@ -50,7 +50,7 @@ namespace books.api.Controllers
 
         // POST: api/Books
         [HttpPost(Name = "AddBooks")]
-        public IActionResult AddBooks([FromBody] IEnumerable<Book> books)
+        public IActionResult AddBooks([FromBody] IEnumerable<BookDTO> books)
         {
             _work.Books.AddRange(books);
             return NoContent();
@@ -58,7 +58,7 @@ namespace books.api.Controllers
 
         // PUT: api/Books/5
         [HttpPut("{id:length(24)}")]
-        public IActionResult Put(string id, [FromBody] Book book)
+        public IActionResult Put(string id, [FromBody] BookDTO book)
         {
             _work.Books.Update(id, book);
             return NoContent();
@@ -72,7 +72,7 @@ namespace books.api.Controllers
         //}
 
         [HttpDelete(Name = "RemoveBooks")]
-        public IActionResult DeleteBooks(IEnumerable<Book> rbooks)
+        public IActionResult DeleteBooks(IEnumerable<BookDTO> rbooks)
         {
             _work.Books.RemoveRange(rbooks);
             return NoContent();

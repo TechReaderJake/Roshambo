@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace books.api.Services
+namespace yugen.api.v1.Services
 {
     /// <summary>
     /// Interface to set up fields to get Database Settings from the JSON file.

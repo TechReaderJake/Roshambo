@@ -1,10 +1,10 @@
-﻿using books.api.Services.Repositories;
+﻿using yugen.api.v1.Services.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace books.api.Services
+namespace yugen.api.v1.Services
 {
     /// <summary>
     /// Allows usage of the IBookRepository and can be extend to other objects
@@ -13,6 +13,7 @@ namespace books.api.Services
     public interface IUnitOfWork : IDisposable
     {
         IBookRepository Books { get; }
+        IWorldRepository Worlds { get; }
 
         // Not Used Currently
         int Complete();

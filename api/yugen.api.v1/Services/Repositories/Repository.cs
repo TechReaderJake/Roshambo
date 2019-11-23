@@ -1,4 +1,4 @@
-﻿using books.api.Models;
+﻿using yugen.api.v1.Models;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace books.api.Services.Repositories
+namespace yugen.api.v1.Services.Repositories
 {
     /// <summary>
     /// Implementation of the Generic Repository to allow objects to extend the class for the CRUD operations.

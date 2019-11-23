@@ -1,11 +1,11 @@
-﻿using books.api.Services;
+﻿using yugen.api.v1.Services;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace books.api.Models
+namespace yugen.api.v1.Models
 {
     /// <summary>
     /// Database Context used for the API. Receives database settings interface.

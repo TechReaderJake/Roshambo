@@ -1,18 +1,18 @@
-﻿using books.api.Models;
+﻿using yugen.api.v1.Models;
 using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace books.api.Services.Repositories
+namespace yugen.api.v1.Services.Repositories
 {
     /// <summary>
     /// Extends the generic CRUD Repository and 
     /// allows adding specific methods for the object that needs implemented.
     /// </summary>
-    public interface IBookRepository : IRepository<Book, string>
+    public interface IBookRepository : IRepository<BookDTO, string>
     {
-        IEnumerable<Book> GetBooksWithDescriptions(int id);
+        IEnumerable<BookDTO> GetBooksWithDescriptions(int id);
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace books.api.Services
+namespace yugen.api.v1.Services
 {
     /// <summary>
     /// Implementation of the IDatabaseSettings to actually use the DatabaseSettings.

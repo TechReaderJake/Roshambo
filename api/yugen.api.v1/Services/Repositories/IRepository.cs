@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace books.api.Services.Repositories
+namespace yugen.api.v1.Services.Repositories
 {
     /// <summary>
     /// Generic Repository Interface. 
