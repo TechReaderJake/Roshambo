@@ -1,0 +1,59 @@
+@import "../helpers/variables";
+
+#ts-panel {
+    font-size: 30px;
+    z-index: 555;
+    height: 50px;
+    left: 0;
+    top: 0;
+    right: 0;
+    position: fixed;
+    transition: 0.5s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include themify($themes){
+        background-color: themed('backgroundColorLeftSide');
+        color: themed('textHeaderColor')
+    }
+    //background: blue;
+    &.open {
+        margin-left: $ls-panel-width;
+    }
+    .avatar {
+        vertical-align: middle;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+    }
+    .center {
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .right {
+        display: inline-flex;
+        align-items: center;
+        .nav-link {
+            display: inline-flex;
+        }
+    }
+    
+    .menu-icon {
+        margin-right: .5rem;
+        margin-left: .5rem;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: $sm-screen) {
+    #ts-panel {
+        font-size: 1.2rem !important;
+        justify-content: inherit;
+        .right {
+            margin-left: auto;
+        }
+        &.open {
+            margin-left: inherit;
+        }
+    }
+}

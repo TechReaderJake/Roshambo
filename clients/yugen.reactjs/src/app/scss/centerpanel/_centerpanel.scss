@@ -1,0 +1,48 @@
+@import "../helpers/variables";
+#ce-panel {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    .content {
+        margin-top: 20px;;
+        width: 70%;
+    }
+    .card {
+        margin-bottom: 2rem;
+        @include themify($themes){
+        background-color: themed('backgroundCardColor');
+        }
+    }
+    .card-header {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 50px;
+        z-index: 222;
+        font-size: 1.4rem;
+        @include themify($themes){
+        background-color: themed('backgroundCardHeaderColor');
+        }
+    }
+    &.open {
+        margin-left: $ls-panel-width;
+        .content {
+            width: 80%;   
+        }
+    }
+}
+
+@media screen and (max-width: $sm-screen) {
+    #ce-panel {
+        font-size: 1.2rem !important;
+        justify-content: inherit;
+        .right {
+            margin-left: auto;
+        }
+        .content {
+            width: inherit;
+        }
+        &.open {
+            margin-left: inherit;
+        }
+    }
+}

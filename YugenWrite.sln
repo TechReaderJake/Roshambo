@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29201.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api", "api", "{D25E0B9F-31ED-4367-BE18-4B511932DC3F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "yugen.api.v1", "api\yugen.api.v1\yugen.api.v1.csproj", "{575DB3A9-7E57-439B-9123-F12702C21B13}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "clients", "clients", "{AA1B808A-3A4B-498D-B29E-F936C47E9CB5}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "yugen.reactjs", "clients\yugen.reactjs\yugen.reactjs.njsproj", "{A27F7B2B-B9EC-47BE-A279-76D95796E0FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{7BBDF5E2-4F2A-421B-8C33-1EC5DCBE6CF7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{43120860-3C5E-4FAF-AAFA-E69D92D9AFB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "yugen.tests", "tests\yugen.tests\yugen.tests.csproj", "{EC90164E-37DA-4A33-9220-A275FB9C1730}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "yugen.shared", "shared\yugen.shared\yugen.shared.csproj", "{8C8ECBF5-A1E4-4E14-A56C-8CFE81CFEFFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{575DB3A9-7E57-439B-9123-F12702C21B13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{575DB3A9-7E57-439B-9123-F12702C21B13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{575DB3A9-7E57-439B-9123-F12702C21B13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{575DB3A9-7E57-439B-9123-F12702C21B13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A27F7B2B-B9EC-47BE-A279-76D95796E0FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A27F7B2B-B9EC-47BE-A279-76D95796E0FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A27F7B2B-B9EC-47BE-A279-76D95796E0FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A27F7B2B-B9EC-47BE-A279-76D95796E0FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC90164E-37DA-4A33-9220-A275FB9C1730}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC90164E-37DA-4A33-9220-A275FB9C1730}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC90164E-37DA-4A33-9220-A275FB9C1730}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC90164E-37DA-4A33-9220-A275FB9C1730}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C8ECBF5-A1E4-4E14-A56C-8CFE81CFEFFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C8ECBF5-A1E4-4E14-A56C-8CFE81CFEFFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C8ECBF5-A1E4-4E14-A56C-8CFE81CFEFFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C8ECBF5-A1E4-4E14-A56C-8CFE81CFEFFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{575DB3A9-7E57-439B-9123-F12702C21B13} = {D25E0B9F-31ED-4367-BE18-4B511932DC3F}
+		{A27F7B2B-B9EC-47BE-A279-76D95796E0FC} = {AA1B808A-3A4B-498D-B29E-F936C47E9CB5}
+		{EC90164E-37DA-4A33-9220-A275FB9C1730} = {43120860-3C5E-4FAF-AAFA-E69D92D9AFB2}
+		{8C8ECBF5-A1E4-4E14-A56C-8CFE81CFEFFE} = {7BBDF5E2-4F2A-421B-8C33-1EC5DCBE6CF7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {02D8FFF6-2649-4C72-AA4D-327D1153432E}
+	EndGlobalSection
+EndGlobal

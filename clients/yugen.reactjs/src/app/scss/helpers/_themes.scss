@@ -1,0 +1,143 @@
+@import './variables';
+
+// golden: #e68903
+// red: #810e00
+// red: #670700
+// blue: #161925
+// gray: #6f6356
+// yellow: #f2226e
+// black: #020302
+  
+/*
+ * Theme definitions
+ */
+ $white: #fff;
+ $black: #000;
+
+$themes: (
+  light: ( // needs work
+    backgroundColorBody: $white,
+    textColor: $black,
+    textHeaderColor: $white,
+    backgroundCardColor: #ddd,
+    backgroundCardHeaderColor: #888,
+
+    backgroundColorLeftSideTransparent: rgba(0,0,0, .7),
+    backgroundColorLeftSideSelect: #777,
+    backgroundColorLeftSide: $blue-400,
+    textFormColor: #eee,
+    arrowBorder: 2px solid #aaa,
+    listOpenLeftBorder: $tan-200,
+    linkColor: #aaa,
+    linkColorHover: #777,
+    linkColorActive: $white,
+  ),
+  blue:(
+    backgroundColorBody: $tan-200,
+    textColor: $black,
+    textHeaderColor: $white,
+    backgroundCardColor: #ddd,
+    backgroundCardHeaderColor: #ddd,
+
+    backgroundColorLeftSideTransparent: rgba(0,0,0, .7),
+    backgroundColorLeftSideSelect: #222,
+    backgroundColorLeftSide: $blue-400,
+    textFormColor: $tan-100,
+    arrowBorder: 2px solid $tan-100,
+    listOpenLeftBorder: $tan-200,
+    linkColor: $tan-100,
+    linkColorHover: $white,
+    linkColorActive: $white,
+  ),
+  twilight: (
+    backgroundColorBody: #020302,
+    textColor: #e68903,
+    textHeaderColor: $white,
+    backgroundCardColor: #161925,
+    backgroundCardHeaderColor: #161925,
+
+    backgroundColorLeftSideTransparent: rgba(0,0,0, .7),
+    backgroundColorLeftSideSelect: #161925,
+    backgroundColorLeftSide: #6f6356,
+    textFormColor: #e68903,
+    arrowBorder: 2px solid #e68903,
+    listOpenLeftBorder: #810e00,
+    linkColor: $white,
+    linkColorHover: #323262,
+    linkColorActive: #323262,
+  ),
+  rainshower: (
+    backgroundColorBody: #333,
+    textColor: #ddd,
+    textHeaderColor: $white,
+    backgroundCardColor: #555,
+    backgroundCardHeaderColor: #555,
+
+    backgroundColorLeftSideTransparent: rgba(0,0,0, .7),
+    backgroundColorLeftSideSelect: #333,
+    backgroundColorLeftSide: #222,
+    textFormColor: #ddd,
+    arrowBorder: 2px solid #666,
+    listOpenLeftBorder: $tan-200,
+    linkColor: #999,
+    linkColorHover: #ddd,
+    linkColorActive: $white,
+  ),
+  night: (
+    backgroundColorBody: #000,
+    textColor: $white,
+    textHeaderColor: $white,
+    backgroundCardColor: #222,
+    backgroundCardHeaderColor: #333,
+
+    backgroundColorLeftSideTransparent: rgba(0,0,0, .7),
+    backgroundColorLeftSideSelect: #222,
+    backgroundColorLeftSide: #111,
+    textFormColor: #bbb,
+    arrowBorder: 2px solid #888,
+    listOpenLeftBorder: $blue-400,
+    linkColor: #777,
+    linkColorHover: #eee,
+    linkColorActive: $white,
+  ),
+);
+/*
+ * Implementation of themes
+ */
+@mixin themify($themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
+@mixin themeDefaults($themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@include themeDefaults($themes)
+{
+  background-color: themed('backgroundColorBody');
+  color: themed('textColor');
+}

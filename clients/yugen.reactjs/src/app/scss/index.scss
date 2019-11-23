@@ -1,0 +1,20 @@
+@import "./helpers/_themes";
+
+.form-control {
+    padding: 5px;
+    font-size: .8rem;
+    border: none;
+    @include themify($themes) {
+        color: themed('textFormColor');
+        background-color: themed('backgroundColorLeftSideSelect');
+        &::placeholder {
+            color: themed('textFormColor');
+            opacity: .6;
+        }
+        &:focus{
+            border-color: themed('textFormColor');
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px themed('textFormColor');
+            outline: 0 none;
+        }
+    }
+}

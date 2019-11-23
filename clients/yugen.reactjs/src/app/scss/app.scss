@@ -1,0 +1,12 @@
+@import "./helpers/_themes";
+@import "./leftpanel/_leftpanel";
+@import "./toppanel/toppanel";
+@import "./centerpanel/_centerpanel";
+
+/* Fixed anchors */
+:target:before {
+	content: "";
+	display: block;
+	height: 50px; /* fixed header height*/
+	margin: -50px 0 0; /* negative fixed header height */
+}

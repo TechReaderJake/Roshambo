@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29201.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "yugen.reactjs", "yugen.reactjs.njsproj", "{A27F7B2B-B9EC-47BE-A279-76D95796E0FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A27F7B2B-B9EC-47BE-A279-76D95796E0FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A27F7B2B-B9EC-47BE-A279-76D95796E0FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A27F7B2B-B9EC-47BE-A279-76D95796E0FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A27F7B2B-B9EC-47BE-A279-76D95796E0FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {39A3CC12-A054-4768-B29B-EABE58A86DD5}
+	EndGlobalSection
+EndGlobal
