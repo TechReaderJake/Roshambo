@@ -15,5 +15,9 @@ namespace yugen.api.v1.Models
         public string Id { get; set; }
         [BsonElement("title")]
         public string Title { get; set; }
+        [BsonElement("created")]
+        public DateTime Created { get; set; }
+        [BsonElement("modified")]
+        public DateTime Modified { get; set; }
     }
 }

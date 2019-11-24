@@ -4,7 +4,6 @@ import { themes } from './Themes';
 import LeftPanel from '../leftpanel/Index';
 import TopPanel from '../toppanel/Index';
 import CenterPanel from '../centerpanel/Index';
-import { data } from './Data';
 
 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -25,25 +24,29 @@ class App extends React.Component {
   state = {
     navopen: true,
     theme: themes.night,
-    world: data.worlds[0].name,
-    book: data.books[0].name,
+    world: "1",
+    book: "1",
   }
+
   componentDidMount(){
     document.body.classList.add(this.state.theme);
     window.addEventListener("resize", this.resize.bind(this));
     this.resize();
   }
+
   resize() {
     let currentHideNav = (window.innerWidth >= 550);
     if(currentHideNav !== this.state.navopen){
       this.setState({navopen: currentHideNav})
     }
   }
+
   toggleNav = () => {
     this.setState((state) => ({
       navopen: !state.navopen
     }));
   }
+  
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState((prevState) => {
@@ -51,12 +54,18 @@ class App extends React.Component {
         document.body.classList.remove(prevState.theme);
         document.body.classList.add(value);
       }
-      if(name === "book" && window.innerWidth <= 550)
-      {
-        this.toggleNav();
-      }
       return {[name]: value};
     });
+    if(name === "book" && window.innerWidth <= 550)
+    {
+      this.toggleNav();
+    }
+    if(name === "world")
+    {
+      this.setState({
+        book: "1"
+      });
+    };
   }
   render() {
       return (

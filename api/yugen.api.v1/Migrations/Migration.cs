@@ -17,6 +17,10 @@ namespace yugen.api.v1.Migrations
         private MongoDB.Driver.MongoClient _client;
         private string _dbname;
         private IMongoDatabase _db;
+
+        //private List<WorldDTO> worlds;
+        //private List<BookDTO> books;
+
         public Migration(MongoDB.Driver.MongoClient client, string dbname)
         {
             _client = client;

@@ -4,7 +4,7 @@ import MenuNav from './MenuNav';
 import MenuSelect from './MenuSelect';
 import WorldSelect from './WorldSelect';
 import BookSelect from './BookSelect';
-import { data, data2 } from '../app/Data'
+import { data2 } from '../app/Data'
 
 export default class Index extends React.Component {
     
@@ -20,13 +20,11 @@ export default class Index extends React.Component {
                         <MenuSelect>
                             <WorldSelect
                                 world={this.props.world}
-                                worlds={data.worlds}
                                 handleChange={this.props.handleChange}
                             />
                             <BookSelect
                                 world={this.props.world}
                                 book={this.props.book}
-                                books={data.books}
                                 handleChange={this.props.handleChange}
                             />
                         </MenuSelect>

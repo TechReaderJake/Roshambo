@@ -26,11 +26,17 @@ namespace yugen.api.v1.Controllers
             _work = new UnitOfWork(appdb);
         }
 
-        // GET: api/Books/5d7617ab1662733dd0d2927b
-        [HttpGet("{id:length(24)}", Name = "GetByBookId")]
-        public ActionResult<BookDTO> GetBook(string id)
+        //// GET: api/Books/5d7617ab1662733dd0d2927b
+        //[HttpGet("{id:length(24)}", Name = "GetByBookId")]
+        //public ActionResult<BookDTO> GetBook(string id)
+        //{
+        //    return _work.Books.Get(id);
+        //}
+
+        [HttpGet("{id:length(24)}", Name = "GetBooksByWorldId")]
+        public ActionResult<List<BookDTO>> GetBooksByWorldId(string id)
         {
-            return _work.Books.Get(id);
+            return _work.Books.GetBooksByWorldId(id).ToList();
         }
 
         // GET: api/Books

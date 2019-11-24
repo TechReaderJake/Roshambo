@@ -13,6 +13,6 @@ namespace yugen.api.v1.Services.Repositories
     /// </summary>
     public interface IBookRepository : IRepository<BookDTO, string>
     {
-        IEnumerable<BookDTO> GetBooksWithDescriptions(int id);
+        IEnumerable<BookDTO> GetBooksByWorldId(string id);
     }
 }

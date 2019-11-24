@@ -22,11 +22,11 @@ namespace yugen.api.v1.Services.Repositories
              * seed the database with generic information. 
             */
 
-            //context.DB().CreateCollection(BookCollection);
+            //context.DB().CreateCollection(Collection);
         }
-        public IEnumerable<BookDTO> GetBooksWithDescriptions(int id)
+        public IEnumerable<BookDTO> GetBooksByWorldId(string worldId)
         {
-            return _context.Find(book => book.Description != "").ToList();
+            return _context.Find(book => book.WorldId == worldId).ToList();
         }
     }
 }
