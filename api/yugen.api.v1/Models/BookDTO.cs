@@ -39,6 +39,8 @@ namespace yugen.api.v1.Models
         public int Pages { get; set; }
         [BsonElement("chapters")]
         public int Chapters { get; set; }
+        [BsonElement("cover")]
+        public string Cover { get; set; }
         [BsonElement("created")]
         public DateTime Created { get; set; }
         [BsonElement("modified")]

@@ -30,7 +30,7 @@ class WorldSelect extends React.Component {
                     defaultValue={this.props.world}
                     onChange={this.props.handleChange}
                 >
-                    <option value="1" disabled>Select World</option>
+                    <option value="1" disabled>Select World ({this.state.worlds.length})</option>
                     {worlds}
                 </Input>
                 <InputGroupAddon addonType="append">

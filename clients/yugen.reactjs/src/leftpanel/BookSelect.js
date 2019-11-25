@@ -48,7 +48,7 @@ class BookSelect extends React.Component {
                 value={this.props.book}
                 onChange={this.props.handleChange}
             >
-                <option value="1" disabled>Select Book</option>
+    <option value="1" disabled>Select Book ({this.state.books.length})</option>
                 {books}
             </Input>
             <InputGroupAddon addonType="append">
