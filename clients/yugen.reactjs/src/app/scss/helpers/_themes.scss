@@ -16,16 +16,16 @@
 
 $themes: (
   light: ( // needs work
-    backgroundColorBody: $white,
+    backgroundColorBody: #aaa,
     textColor: $black,
     textHeaderColor: $white,
-    backgroundCardColor: #ddd,
-    backgroundCardHeaderColor: #888,
+    backgroundCardColor: $white,
+    backgroundCardHeaderColor: $white,
 
     backgroundColorLeftSideTransparent: rgba(0,0,0, .7),
-    backgroundColorLeftSideSelect: #777,
+    backgroundColorLeftSideSelect: #fff,
     backgroundColorLeftSide: $blue-400,
-    textFormColor: #eee,
+    textFormColor: $black,
     arrowBorder: 2px solid #aaa,
     listOpenLeftBorder: $tan-200,
     linkColor: #aaa,

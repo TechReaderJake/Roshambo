@@ -5,25 +5,25 @@ import Axios from "axios";
 
 class WorldProvider extends React.Component {
     state = {
-        defaultWorld: { id: "1", title: "1" },
-        selectedWorld: { id: "1", title: "1" },
+        world: { id: "1" },
         worlds: [],
-        refreshWorlds: this.refreshWorlds,
-        selectWorld: this.selectWorld
-    }
-    componentDidMount() { this.refreshWorlds(); }
-    refreshWorlds() {
-        Axios.get(api.getWorlds).then((response) => {
+        refreshWorlds: () => {
+            Axios.get(api.getWorlds).then((response) => {
+                this.setState({
+                    worlds: response.data
+                })
+            });
+        },
+        selectWorld: (event) => {
+            const {value} = event.target;
             this.setState({
-                worlds: response.data
-            })
-        });
+                world: this.getWorld(value),
+            });
+        }
     }
-    selectWorld(id){
-        const worlds = Object.assign({}, this.state.books);
-        this.setState({
-            world: worlds[id]
-        })
+    componentDidMount() { this.state.refreshWorlds(); }
+    getWorld(id){
+        return this.state.worlds.find((element) => element.id === id);
     }
 
     render() {

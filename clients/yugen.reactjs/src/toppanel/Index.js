@@ -1,22 +1,34 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Form, Input, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {themes} from '../app/Themes'
+import { CapFirstLetter } from '../app/Functions';
+import {themes} from '../app/Themes';
+import { BookContext } from "../app/Context/Index";
 
-export default function Index(props) {
-    const [dropdownOpen, setDropdownOpen] = useState(false);
-    const toggle = () => setDropdownOpen(prevState => !prevState);
+class Index extends React.Component {
+    static contextType = BookContext;
+    state = {
+        dropdownOpen: false,
+    }
+    toggle = () => {
+        this.setState((prevState) => ({
+            dropdownOpen: !prevState.dropdownOpen
+        }));
+    }
+    render (){
     const themeOptions = [];
+
     for (let key in themes) {
         if(themes.hasOwnProperty(key)){
-        themeOptions.push(<option key={themes[key]} value={themes[key]}>{key.charAt(0).toUpperCase() + key.slice(1)}</option>)
+        themeOptions.push(<option key={themes[key]} value={themes[key]}>{CapFirstLetter(key)}</option>)
         }
     }
-    const title = props.book === "1" ? "" : props.book;
+    const title = this.context.book.title === "1" ? "" : this.context.book.title;
+    
     return (        
-    <div id="ts-panel" className={props.isNavOpen ? "open" : ""}>
+    <div id="ts-panel" className={this.props.isNavOpen ? "open" : ""}>
         <div className="left">
-            <FontAwesomeIcon icon="bars" onClick={props.toggleNav} className="menu-icon" />
+            <FontAwesomeIcon icon="bars" onClick={this.props.toggleNav} className="menu-icon" />
         </div>
         <div className="center">
             {title}
@@ -24,12 +36,12 @@ export default function Index(props) {
         <div className="right">
             <Form>
             <Input type="select" name="theme"
-                value={props.theme}
-                onChange={props.handleChange}>
+                value={this.props.theme}
+                onChange={this.props.handleChange}>
                 {themeOptions}
             </Input>
             </Form>
-            <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+            <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                 <DropdownToggle nav>
                 <FontAwesomeIcon icon="user-circle" />
                 </DropdownToggle>
@@ -47,5 +59,8 @@ export default function Index(props) {
                 </DropdownMenu>
             </Dropdown>
         </div>
-  </div>);
+    </div>);
+    }
 }
+
+export default Index;

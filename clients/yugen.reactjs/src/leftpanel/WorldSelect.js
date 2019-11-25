@@ -14,8 +14,8 @@ class WorldSelect extends React.Component {
                 <Label for="worlds">Worlds</Label>
                 <InputGroup>
                 <Input type="select" name="world"
-                    value={this.props.world}
-                    onChange={this.props.handleChange}
+                    value={this.context.world.id}
+                    onChange={this.context.selectWorld}
                 >
                     <option value="1" disabled>Select World ({this.context.worlds.length})</option>
                     {worlds}

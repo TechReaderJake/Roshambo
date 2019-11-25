@@ -12,7 +12,7 @@ class BookSelect extends React.Component {
         let books = this.context.books.map( (book, index) => {
             return <option key={index} value={book.id}>{book.title}</option>;
         });
-        console.log(this.context);
+        
         return (
             <FormGroup>
             <Label for="books">Books</Label>

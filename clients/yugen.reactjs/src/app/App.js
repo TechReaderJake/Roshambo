@@ -26,8 +26,6 @@ class App extends React.Component {
   state = {
     navopen: true,
     theme: themes.night,
-    world: "1",
-    book: "1",
   }
 
   componentDidMount(){
@@ -61,37 +59,23 @@ class App extends React.Component {
       }
       return {[name]: value};
     });
-    if(name === "book" && window.innerWidth <= 550)
-    {
-      this.toggleNav();
-    }
-    if(name === "world")
-    {
-      this.setState({
-        book: "1"
-      });
-    };
   }
   render() {
       return (
         <Container fluid>
           <WorldProvider>
-            <BookProvider world={this.state.world} toggleNav={this.toggleNav}>
+            <BookProvider toggleNav={this.toggleNav}>
               <LeftPanel
                 isNavOpen={this.state.navopen} 
                 toggleNav={this.toggleNav}
-                handleChange={this.handleChange}
-                book={this.state.book}
-                world={this.state.world} />
+                handleChange={this.handleChange} />
               <TopPanel
                 isNavOpen={this.state.navopen}
                 toggleNav={this.toggleNav}
                 theme={this.state.theme}
-                handleChange={this.handleChange}
-                book={this.state.book} />
+                handleChange={this.handleChange} />
               <CenterPanel
                 isNavOpen={this.state.navopen}
-                book={this.state.book}
               />
             </BookProvider>
           </WorldProvider>

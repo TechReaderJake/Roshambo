@@ -3,22 +3,28 @@ import MenuItem from './MenuItem';
 import { Nav, Form, FormGroup, Input } from 'reactstrap';
 import { api } from "../app/Constants";
 import Axios from 'axios';
+import { BookContext } from "../app/Context/Index";
 
 class MenuNav extends React.Component
 {
+    static contextType = BookContext;
     state = {
         chapters: []
     }
-    componentDidMount(){ this.refreshChapters();}
-    componentDidUpdate(prevProps){
-        if(this.props.book !== prevProps.book)
+    componentDidMount(){ 
+        this.prevBook = this.context.book;
+        this.refreshChapters();
+    }
+    componentDidUpdate(){
+        if(this.prevBook.id !== this.context.book.id)
         {
             this.refreshChapters();
         }
+        this.prevBook = this.context.book;
     }
     refreshChapters() {
-        if(this.props.book !== "1"){
-            Axios.get(api.getChapters + "/" + this.props.book).then((response) => {
+        if(this.context.book.id !== "1"){
+            Axios.get(api.getChapters + "/" + this.context.book.id).then((response) => {
                 this.setState({
                     chapters: response.data
                 })

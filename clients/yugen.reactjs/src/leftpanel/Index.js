@@ -23,7 +23,6 @@ c
                             />
                             <BookSelect
                                 world={this.props.world}
-                                book={this.props.book}
                                 handleChange={this.props.handleChange}
                             />
                         </MenuSelect>
