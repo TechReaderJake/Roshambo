@@ -1,9 +1,11 @@
 import React from 'react';
 import { Container } from 'reactstrap';
 import { themes } from './Themes';
-import LeftPanel from '../leftpanel';
-import TopPanel from '../toppanel';
-import CenterPanel from '../centerpanel';
+import LeftPanel from '../leftpanel/Index';
+import TopPanel from '../toppanel/Index';
+import CenterPanel from '../centerpanel/Index';
+import WorldProvider from './Providers/WorldProvider';
+import BookProvider from './Providers/BookProvider';
 
 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -73,22 +75,26 @@ class App extends React.Component {
   render() {
       return (
         <Container fluid>
-          <LeftPanel
-            isNavOpen={this.state.navopen} 
-            toggleNav={this.toggleNav}
-            handleChange={this.handleChange}
-            book={this.state.book}
-            world={this.state.world} />
-          <TopPanel
-            isNavOpen={this.state.navopen}
-            toggleNav={this.toggleNav}
-            theme={this.state.theme}
-            handleChange={this.handleChange}
-            book={this.state.book} />
-          <CenterPanel
-            isNavOpen={this.state.navopen}
-            book={this.state.book}
-          />
+          <WorldProvider>
+            <BookProvider world={this.state.world} toggleNav={this.toggleNav}>
+              <LeftPanel
+                isNavOpen={this.state.navopen} 
+                toggleNav={this.toggleNav}
+                handleChange={this.handleChange}
+                book={this.state.book}
+                world={this.state.world} />
+              <TopPanel
+                isNavOpen={this.state.navopen}
+                toggleNav={this.toggleNav}
+                theme={this.state.theme}
+                handleChange={this.handleChange}
+                book={this.state.book} />
+              <CenterPanel
+                isNavOpen={this.state.navopen}
+                book={this.state.book}
+              />
+            </BookProvider>
+          </WorldProvider>
         </Container>
     );
   }

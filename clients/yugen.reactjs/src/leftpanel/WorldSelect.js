@@ -1,25 +1,12 @@
 import React from "react";
 import { FormGroup, Input, Label, Button, InputGroupAddon, InputGroup } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { api } from '../app/Constants';
-import Axios from "axios";
+import { WorldContext } from "../app/Context/Index";
 
 class WorldSelect extends React.Component {
-    state = {
-        worlds: []
-    }
-    componentDidMount() {
-        this.refreshWorlds();
-    }
-    refreshWorlds() {
-        Axios.get(api.getWorlds).then((response) => {
-            this.setState({
-                worlds: response.data
-            })
-        });
-    }
+    static contextType = WorldContext;
     render(){
-        const worlds = this.state.worlds.map((el) => 
+        const worlds = this.context.worlds.map((el) => 
             <option key={el.id} value={el.id}>{el.title}</option>
         );
         return (
@@ -27,10 +14,10 @@ class WorldSelect extends React.Component {
                 <Label for="worlds">Worlds</Label>
                 <InputGroup>
                 <Input type="select" name="world"
-                    defaultValue={this.props.world}
+                    value={this.props.world}
                     onChange={this.props.handleChange}
                 >
-                    <option value="1" disabled>Select World ({this.state.worlds.length})</option>
+                    <option value="1" disabled>Select World ({this.context.worlds.length})</option>
                     {worlds}
                 </Input>
                 <InputGroupAddon addonType="append">

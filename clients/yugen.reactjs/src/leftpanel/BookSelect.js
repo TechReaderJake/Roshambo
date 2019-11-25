@@ -1,54 +1,27 @@
 import React from "react";
 import { FormGroup, Input, Label, Button, InputGroupAddon, InputGroup } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { api } from "../app/Constants";
-import Axios from "axios";
+import { BookContext } from "../app/Context/Index";
+
 
 class BookSelect extends React.Component {
-    state = {
-        books: []
-    }
-    componentDidMount()
-    {
-        this.refreshBooks();
-    }
-    componentDidUpdate(prevProps){
 
-        if(this.props.world !== prevProps.world)
-        {
-            this.refreshBooks();
-        }
-    }
-    refreshBooks() {
-        if(this.props.world !== "1")
-        {
-            Axios.get(api.getBooks + "/" + this.props.world).then((response) => {
-                this.setState({
-                    books: response.data
-                })
-            });
-        }
-    }
-
+    static contextType = BookContext;
     render(){
-        // let books = props.books.filter( (book) => {
-        //     return book.world_id === this.props.world;
-        // }).map( (book) => {
-        //     return <option key={book.id} value={book.name}>{book.name}</option>;
-        // });
-        let books = this.state.books.map( (book, index) => {
+
+        let books = this.context.books.map( (book, index) => {
             return <option key={index} value={book.id}>{book.title}</option>;
         });
-
+        console.log(this.context);
         return (
             <FormGroup>
             <Label for="books">Books</Label>
                 <InputGroup>
             <Input type="select" name="book"
-                value={this.props.book}
-                onChange={this.props.handleChange}
+                value={this.context.book.id}
+                onChange={this.context.selectBook}
             >
-    <option value="1" disabled>Select Book ({this.state.books.length})</option>
+    <option value="1" disabled>Select Book ({this.context.books.length})</option>
                 {books}
             </Input>
             <InputGroupAddon addonType="append">
