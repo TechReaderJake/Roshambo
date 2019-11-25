@@ -14,6 +14,7 @@ namespace yugen.api.v1.Services
     {
         IBookRepository Books { get; }
         IWorldRepository Worlds { get; }
+        IChapterRepository Chapters { get; }
 
         // Not Used Currently
         int Complete();

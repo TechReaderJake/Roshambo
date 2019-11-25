@@ -13,15 +13,17 @@ namespace yugen.api.v1.Services
     /// </summary>
     public class UnitOfWork : IUnitOfWork
     {
-        public IBookRepository Books { get; private set; }
         public IWorldRepository Worlds { get; private set; }
+        public IBookRepository Books { get; private set; }
+        public IChapterRepository Chapters { get; private set; }
         private AppDbContext _context { get; set; }
 
         public UnitOfWork(AppDbContext context)
         {
             _context = context;
-            Books = new BookRepository(_context);
             Worlds = new WorldRepository(_context);
+            Books = new BookRepository(_context);
+            Chapters = new ChapterRepository(_context);
         }
 
         // Not Used Currently

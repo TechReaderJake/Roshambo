@@ -4,10 +4,9 @@ import MenuNav from './MenuNav';
 import MenuSelect from './MenuSelect';
 import WorldSelect from './WorldSelect';
 import BookSelect from './BookSelect';
-import { data2 } from '../app/Data'
 
 export default class Index extends React.Component {
-    
+c     
     render() {
         let open = this.props.isNavOpen ? "open" : "";
         let showing = this.props.isNavOpen ? "" : "d-none";
@@ -33,7 +32,6 @@ export default class Index extends React.Component {
                         handleChange={this.props.handleChange}
                         world={this.props.world}
                         book={this.props.book}
-                        data={data2}
                     />
                 </div>
             </div>

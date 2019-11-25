@@ -21,7 +21,7 @@ namespace yugen.api.v1.Models
             if (setting.SeedDb)
             {
                 var migrate = new Migration(client, setting.DatabaseName);
-                _db = migrate.CreateAsync();
+                _db = migrate.Create();
             }
             else
             {

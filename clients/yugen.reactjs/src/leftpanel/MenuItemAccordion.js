@@ -1,7 +1,7 @@
 import React from 'react'
 import {ListGroup, ListGroupItem, NavLink} from 'reactstrap';
 
-export default function MenuGroup (props) {
+export default function MenuItemAccordion (props) {
     const items = []
     props.items.forEach(element => {
         if(element.name != null){

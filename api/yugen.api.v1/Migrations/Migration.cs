@@ -27,15 +27,16 @@ namespace yugen.api.v1.Migrations
             _dbname = dbname;
         }
 
-        public IMongoDatabase CreateAsync()
+        public IMongoDatabase Create()
         {
             _db = _client.GetDatabase(_dbname);
-            InsertDataAsync<WorldDTO>("worlds");
-            InsertDataAsync<BookDTO>("books");
+            InsertData<WorldDTO>("worlds");
+            InsertData<BookDTO>("books");
+            InsertData<ChapterDTO>("chapters");
             return _db;
         }
 
-        private void InsertDataAsync<T>(string inputFileName)
+        private void InsertData<T>(string inputFileName)
         {
             _db.DropCollection(inputFileName);
             _db.CreateCollection(inputFileName);

@@ -1,42 +1,42 @@
 import React from 'react';
-import MenuGroup from './MenuGroup';
+import MenuAccord from './MenuItemAccordion';
 import { NavItem, NavLink, Badge } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {CapFirstLetter} from '../app/Functions';
 
 class MenuItem extends React.Component {
     
     render(){
-        var expanded = this.props.expanded ? true : false;
-        var haveSubItems = this.props.subItems != null && this.props.subItems.length > 0;
-        var numSubItems = null;
-        var stat = null;
         var navLink = null;
         var subItems = null;
+        var expanded = this.props.expanded ? true : false;
+        var url = this.props.url != null ? this.props.url : "#";
         var btn = <FontAwesomeIcon icon={this.props.icon} />;
-        var linkName = this.props.name.charAt(0).toUpperCase() + this.props.name.slice(1);
+        var linkName = CapFirstLetter(this.props.name);
         
-        if (haveSubItems)
+        if (this.props.subItems != null && 
+            this.props.subItems.length >= 0)
         {
-            numSubItems = this.props.subItems.length;
-            stat = numSubItems > 0 ? <Badge pill>{numSubItems}</Badge> : "";
             navLink =
             <NavLink 
                 href="#" 
                 data-toggle="collapse" 
-                data-target={"#" + this.props.id} 
+                data-target={"#" + this.props.name} 
                 aria-expanded={expanded}>
-                {btn} {linkName} {stat}
+                {btn} {linkName} { }
+                <Badge pill>{this.props.subItems.length}</Badge>
             </NavLink>;
-            subItems = <MenuGroup id={this.props.id} items={this.props.subItems} expanded={expanded} />;
+            subItems = 
+            <MenuAccord 
+                id={this.props.name} 
+                items={this.props.subItems} 
+                expanded={expanded} />;
         }
         else {
-            navLink = this.props.url != null ? 
-                <NavLink href={this.props.url}>
-                    {btn} {linkName}
-                </NavLink> : 
-                <NavLink href="#">
-                    {btn} {linkName}
-                </NavLink>;
+            navLink = 
+            <NavLink href={url}>
+                {btn} {linkName}
+            </NavLink>;
         }
     return (
         <NavItem>

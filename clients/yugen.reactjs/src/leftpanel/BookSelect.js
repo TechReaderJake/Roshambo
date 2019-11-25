@@ -36,8 +36,8 @@ class BookSelect extends React.Component {
         // }).map( (book) => {
         //     return <option key={book.id} value={book.name}>{book.name}</option>;
         // });
-        let books = this.state.books.map( (book) => {
-            return <option key={book.id} value={book.title}>{book.title}</option>;
+        let books = this.state.books.map( (book, index) => {
+            return <option key={index} value={book.id}>{book.title}</option>;
         });
 
         return (
@@ -52,7 +52,11 @@ class BookSelect extends React.Component {
                 {books}
             </Input>
             <InputGroupAddon addonType="append">
-                <Button className="btn-sm"><FontAwesomeIcon icon="plus"/></Button>
+                <Button 
+                    className="btn-sm" 
+                    disabled={this.props.world === "1"?true:false}>
+                        <FontAwesomeIcon icon="plus"/>
+                </Button>
             </InputGroupAddon>
             </InputGroup>
             </FormGroup>

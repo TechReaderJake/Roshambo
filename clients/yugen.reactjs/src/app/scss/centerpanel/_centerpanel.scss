@@ -43,6 +43,11 @@
         }
         &.open {
             margin-left: inherit;
+            .content {width: 100%;}
         }
+    }
+    .container-fluid {
+        padding-left: 0;
+        padding-right: 0;
     }
 }

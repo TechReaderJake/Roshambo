@@ -12,14 +12,14 @@ export default function Index(props) {
         themeOptions.push(<option key={themes[key]} value={themes[key]}>{key.charAt(0).toUpperCase() + key.slice(1)}</option>)
         }
     }
-
+    const title = props.book === "1" ? "" : props.book;
     return (        
     <div id="ts-panel" className={props.isNavOpen ? "open" : ""}>
         <div className="left">
             <FontAwesomeIcon icon="bars" onClick={props.toggleNav} className="menu-icon" />
         </div>
         <div className="center">
-            {props.book}
+            {title}
         </div>
         <div className="right">
             <Form>

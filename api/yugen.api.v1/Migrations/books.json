@@ -1,69 +1,80 @@
 [
   {
+    "id": "5ddb47afc97d140d6c72c0f1",
+    "worldId": "5dd9e3b137612415e87db571",
     "title": "Albracas",
     "description": "",
     "authors": "Yellow Barkers, Mdal Csal",
     "genre": "Fantasy",
     "words": 540213,
     "pages": 324,
+    "chapters": 0,
     "created": "2019-09-23T18:25:43.511Z",
-    "modified": "2019-09-23T18:25:43.511Z",
-    "worldId": "5dd9e3b137612415e87db571"
+    "modified": "2019-09-23T18:25:43.511Z"
   },
   {
+    "id": "5ddb47afc97d140d6c72c0f2",
+    "worldId": "5dd9e3b137612415e87db571",
     "title": "Snipers in the Night",
     "description": "Where snipers go shooting in the nighttime.",
     "authors": "Ral Foras, Elton Malvis",
     "genre": "Fiction",
     "words": 401234,
     "pages": 287,
+    "chapters": 0,
     "created": "2019-09-23T18:25:43.511Z",
-    "modified": "2019-09-23T18:25:43.511Z",
-    "worldId": "5dd9e3b137612415e87db571"
+    "modified": "2019-09-23T18:25:43.511Z"
   },
   {
+    "id": "5ddb47afc97d140d6c72c0f3",
+    "worldId": "5dd9e3b137612415e87db56f",
     "title": "Moon Flutters",
     "description": "Where the mmon shadows become more than shadows.",
     "authors": "Calton Reeds",
     "genre": "Mystery",
     "words": 203411,
     "pages": 173,
+    "chapters": 0,
     "created": "2019-09-23T18:25:43.511Z",
-    "modified": "2019-09-23T18:25:43.511Z",
-    "worldId": "5dd9e3b137612415e87db56f"
+    "modified": "2019-09-23T18:25:43.511Z"
   },
-
   {
+    "id": "5ddb47afc97d140d6c72c0f4",
+    "worldId": "5dd9e3b137612415e87db572",
     "title": "Gray Wolf Throne",
     "description": "",
     "authors": "Cinda Williams Chima",
     "genre": "Fantasy",
     "words": 623109,
     "pages": 425,
+    "chapters": 0,
     "created": "2019-09-23T18:25:43.511Z",
-    "modified": "2019-09-23T18:25:43.511Z",
-    "worldId": "5dd9e3b137612415e87db572"
+    "modified": "2019-09-23T18:25:43.511Z"
   },
   {
+    "id": "5ddb47afc97d140d6c72c0f5",
+    "worldId": "5dd9e3b137612415e87db570",
     "title": "Snakes in the Pit",
     "description": "",
     "authors": "Clive Suldon",
     "genre": "Western",
     "words": 100213,
     "pages": 131,
+    "chapters": 0,
     "created": "2019-09-23T18:25:43.511Z",
-    "modified": "2019-09-23T18:25:43.511Z",
-    "worldId": "5dd9e3b137612415e87db570"
+    "modified": "2019-09-23T18:25:43.511Z"
   },
   {
+    "id": "5ddb47afc97d140d6c72c0f6",
+    "worldId": "5dd9e3b137612415e87db570",
     "title": "Midnight at the Tower",
     "description": "A tower that never has darkness, but suddenly that changes.",
     "authors": "Sandy Brown",
     "genre": "Science Fiction",
     "words": 382710,
     "pages": 294,
+    "chapters": 0,
     "created": "2019-09-23T18:25:43.511Z",
-    "modified": "2019-09-23T18:25:43.511Z",
-    "worldId": "5dd9e3b137612415e87db570"
+    "modified": "2019-09-23T18:25:43.511Z"
   }
 ]
