@@ -10,6 +10,11 @@
 	height: 50px; /* fixed header height*/
 	margin: -50px 0 0; /* negative fixed header height */
 }
+.modal-content{
+	@include themify($themes){
+		background-color: themed("backgroundCardHeaderColor");
+	}
+}
 .overflow-hidden {
 	overflow: hidden!important;
 }

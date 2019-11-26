@@ -188,6 +188,9 @@
         a {
             font-size: 1.2rem!important;
         }
+        .ls-panel-header .ls-panel-cover {
+            height: calc(100vw * 1.2);
+        }
         .ls-panel-close {
             display: block;
         }

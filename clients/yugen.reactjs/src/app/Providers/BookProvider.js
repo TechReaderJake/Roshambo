@@ -1,30 +1,50 @@
 import React from 'react';
-import { BookContext } from "../Context/Index";
+import { BookContext } from "../context";
 import { api } from "../Constants";
 import Axios from "axios";
-import { WorldContext } from "../Context/Index";
+import { WorldContext } from "../context";
 
 class BookProvider extends React.Component {
     static contextType = WorldContext;
     state = {
+        bookTitle: "",
+        bookCover: "",
         book: { id: "1"},
         books: [],
         refreshBooks: () => {
             if(this.context.world.id !== "1")
-                Axios.get(api.getBooks + "/" + this.context.world.id).then((response) => {
+                Axios.get(api.getBooks + "/" + 
+                    this.context.world.id).then((response) => {
                     this.setState({
                         books: response.data
                     })
                 });
         },
-        selectBook: (event) => {
-            const {value} = event.target;
+        handleChange: (event) => {
+            const {name,value} = event.target;
+            var eventVal = value;
+            if( name === "book")
+                eventVal = this.getBook(value);
             this.setState({
-                book: this.getBook(value),
+                [name]: eventVal,
             });
             if(window.innerWidth <= 550)
                 this.props.toggleNav();
         },
+        saveBook: () => {
+            const addBook = [{
+                title: this.state.bookTitle, 
+                worldId: this.context.world.id,
+                cover: this.state.bookCover
+            }];
+            Axios.post(api.postBooks, addBook).then(
+                (response) => {
+                this.state.refreshBooks();
+                this.setState({
+                    postBook: ""
+                })
+            })
+        }
     }
     componentDidMount() {
         this.prevWorld = this.context.world;

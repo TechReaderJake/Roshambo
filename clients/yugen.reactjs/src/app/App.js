@@ -4,8 +4,8 @@ import { themes } from './Themes';
 import LeftPanel from '../leftpanel/Index';
 import TopPanel from '../toppanel/Index';
 import CenterPanel from '../centerpanel/Index';
-import WorldProvider from './Providers/WorldProvider';
-import BookProvider from './Providers/BookProvider';
+import WorldProvider from './providers/WorldProvider';
+import BookProvider from './providers/BookProvider';
 
 
 import { library } from '@fortawesome/fontawesome-svg-core';
