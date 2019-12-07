@@ -1,14 +1,12 @@
 import React from 'react';
-import { Card, CardHeader, CardFooter, CardBody, CardText, NavLink } from 'reactstrap'; 
+import { Card, CardHeader, CardFooter, CardBody, CardText } from 'reactstrap'; 
 
 export default function Chapter(props) {
-    
+    console.log(props.chapter);
     return (
     <Card>
-        <CardHeader>
-            <NavLink href={"#" + props.chapter.id}>
-                {props.chapter.title}
-            </NavLink>
+        <CardHeader id={props.chapter.id}>
+            {props.chapter.name}
         </CardHeader>
         <CardBody> 
             <CardText>

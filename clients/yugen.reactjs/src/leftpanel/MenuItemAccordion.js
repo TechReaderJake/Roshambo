@@ -7,7 +7,7 @@ export default function MenuItemAccordion (props) {
         if(element.name != null){
             var item = 
                 <ListGroupItem key={element.id}>
-                    <NavLink href={"#" + element.name}>{element.name}</NavLink>
+                    <NavLink href={"#" + element.id}>{element.name}</NavLink>
                 </ListGroupItem>;
             items.push(item);
         }
