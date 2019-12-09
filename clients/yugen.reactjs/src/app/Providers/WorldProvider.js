@@ -1,7 +1,7 @@
 import React from 'react';
-import {WorldContext} from "../context";
-import { api } from "../Constants";
 import Axios from "axios";
+import { WorldContext } from "../context";
+import { api } from "../Constants";
 
 class WorldProvider extends React.Component {
     state = {

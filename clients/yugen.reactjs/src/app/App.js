@@ -1,9 +1,9 @@
 import React from 'react';
 import { Container } from 'reactstrap';
 import { themes } from './Themes';
-import LeftPanel from '../leftpanel/Index';
-import TopPanel from '../toppanel/Index';
-import CenterPanel from '../centerpanel/Index';
+import LeftPanel from '../leftpanel';
+import TopPanel from '../toppanel';
+import CenterPanel from '../centerpanel';
 import WorldProvider from './providers/WorldProvider';
 import BookProvider from './providers/BookProvider';
 

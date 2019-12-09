@@ -5,10 +5,10 @@ export default function Chapter(props) {
     console.log(props.chapter);
     return (
     <Card>
-        <CardHeader id={props.chapter.id}>
+        <CardHeader>
             {props.chapter.name}
         </CardHeader>
-        <CardBody> 
+        <CardBody id={props.chapter.id}> 
             <CardText>
                 {props.chapter.content}
             </CardText>        
