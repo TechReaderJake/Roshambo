@@ -29,7 +29,8 @@ class MenuItem extends React.Component {
             subItems = 
             <MenuAccord 
                 id={this.props.name} 
-                items={this.props.subItems} 
+                items={this.props.subItems}
+                filterText={this.props.filterText}
                 expanded={expanded} />;
         }
         else {

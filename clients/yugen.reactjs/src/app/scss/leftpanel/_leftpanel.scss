@@ -37,8 +37,10 @@
         // }
         .ls-panel-cover {
             position: relative;
+            height: 375px;
+            overflow: hidden;
         }
-        .ls-panel-image {
+        .ls-panel-img-shade {
             position: absolute;
             top: 0;
             bottom: 0;
@@ -185,6 +187,9 @@
         }
         a {
             font-size: 1.2rem!important;
+        }
+        .ls-panel-header .ls-panel-cover {
+            height: calc(100vw * 1.2);
         }
         .ls-panel-close {
             display: block;

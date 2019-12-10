@@ -3,13 +3,14 @@ import MenuItem from './MenuItem';
 import { Nav, Form, FormGroup, Input } from 'reactstrap';
 import { api } from "../app/Constants";
 import Axios from 'axios';
-import { BookContext } from "../app/Context/Index";
+import { BookContext } from "../app/context";
 
 class MenuNav extends React.Component
 {
     static contextType = BookContext;
     state = {
-        chapters: []
+        chapters: [],
+        filterText: ""
     }
     componentDidMount(){ 
         this.prevBook = this.context.book;
@@ -32,12 +33,25 @@ class MenuNav extends React.Component
         }
         else {this.setState({chapters: []})}
     }
+    handleChange = (event) => {
+        const { name, value } = event.target;
+        this.setState(() => {
+          return {[name]: value};
+        });
+      }
     render() {
         return (
         <Nav vertical>
             <Form>
                 <FormGroup className="mx-2 my-1">
-                    <Input type="search" name="filter" id="sideFilter" placeholder="Filter" className="mt-2" />
+                    <Input 
+                        id="sideFilter"
+                        value={this.state.filterText}
+                        onChange={this.handleChange}
+                        type="search" 
+                        name="filterText" 
+                        placeholder="Filter" 
+                        className="mt-2" />
                 </FormGroup>
             </Form>
             <MenuItem 
@@ -47,6 +61,7 @@ class MenuNav extends React.Component
                 name="chapters"
                 icon="book"
                 expanded
+                filterText={this.state.filterText}
                 subItems={this.state.chapters} />
         </Nav>
         );

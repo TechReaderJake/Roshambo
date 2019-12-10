@@ -3,7 +3,7 @@ import { Form, Input, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } fro
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CapFirstLetter } from '../app/Functions';
 import {themes} from '../app/Themes';
-import { BookContext } from "../app/Context/Index";
+import { BookContext } from "../app/context";
 
 class Index extends React.Component {
     static contextType = BookContext;
