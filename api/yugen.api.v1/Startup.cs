@@ -48,7 +48,8 @@ namespace yugen.api.v1
             {
                 app.UseDeveloperExceptionPage();
 
-                // Change to be more specific outside development.
+                // Change to be more specific outside development 
+                // Very unsafe right now.
                 app.UseCors(builder => builder
                    .AllowAnyOrigin()
                    .AllowAnyMethod()
