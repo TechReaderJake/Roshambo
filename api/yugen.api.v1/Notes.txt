@@ -1,0 +1,498 @@
+﻿-Article, Generic
+-Building / Landmark
+-Character
+-Condition
+-Conflict
+-Document
+-Ethnicity
+-Geography
+-Item
+-Language
+-Material
+-Military Unit
+-Myth / Legend
+-Natural Law
+-Organization
+-Profession
+-Plot / Quest
+-Settlement
+-Species
+-Spell
+-Technology
+-Title / Rank
+-Tradition / Ritual
+-Vehicle
+
+-Location Types
+--Abbey
+--Acropolis / Citadel
+--Airport
+--Alleyway
+--Allotment
+--Amphitheatre
+--Apartment
+--Apartment building / Tenament
+--Aqueduct
+--Arcade
+--Architectural Element, Catwalk
+--Architectural Element, Dungeon
+--Architectural Element, Entrance / Entryway
+--Architectural Element, Gallery
+--Architectural Element, Rooftop
+--Archway / Triumphal Arch
+--Arcology / Residential Complex
+--Arena
+--Arsenal
+--Art gallery
+--Aviary
+--Bank / Treasury
+--Barber / Dentist / Surgery
+--Barracks
+--Barrow / Burial ground
+--Bathhouse
+--Battlesite / Battlefield
+--Bench
+--Blacksmith / Smithy
+--Boathouse / Wharf
+--Brewery / Winery
+--Bridge
+--Brothel / Whorehouse
+--Bunker
+--Cafe / Tearoom
+--Cairn
+--Canal
+--Canal lock
+--Casino
+--Castle
+--Catacomb
+--Cathedral / Great temple
+--Cemetery
+--Chapel
+--Circus
+--Clinic
+--College / Academy
+--Consulate
+--Courthouse
+--Cowshed
+--Crypt
+--Customs house
+--Dam
+--Dance club
+--Datacenter
+--Dungeon
+--Embassy
+--Estate
+--Factory
+--Farm
+--Fishery
+--Footpath
+--Fort
+--Fortress
+--Foundry
+--Fountain
+--Garage
+--Garden
+--Gatehouse
+--Gazebo / Bandstand
+--Geographic Feature
+--Government complex
+--Graveyard
+--Great hall
+--Guard post / house
+--Guildhall
+--Gym
+--Hangar, Massive
+--Hideout
+--Highway
+--Hospital
+--Hospitality, Camping
+--Hospitality, Hotel
+--Hospitality, Motel
+--Hospitality, Resort
+--Hospitality, Spa
+--House
+--House, Large
+--Hut
+--Hydroponics / Agricultural complex
+--Inn
+--Jeweler
+--Keep
+--Kiosk / Small store
+--Laboratory
+--Lair
+--Landing Pad
+--Library
+--Lighthouse
+--Manor house / Meeting hall
+--Mansion / Villa
+--Manufactory
+--Market square
+--Market stall
+--Megastructure, Dyson Sphere
+--Megastructure, Land based
+--Megastructure, Orbital scale
+--Megastructure, Planetary scale
+--Megastructure, Stellar scale
+--Megastructure, Trans-orbital
+--Memorial / War Memorial
+--Military base / complex
+--Mill
+--Mine
+--Ministry / City hall
+--Missile launch facility
+--Monastery
+--Monument / Statue, Large
+--Monument, Large
+--Museum
+--Natural Wonder
+--Observatory / Telescope
+--Office
+--Opera house
+--Orbital, Beacon / Buoy
+--Orbital, Halo / Ringworld
+--Orbital, Outpost
+--Orbital, Satelite
+--Orbital, Shipyard
+--Orbital, Space elevator
+--Orbital, Station
+--Orbital, Way/ Refueling station
+--Orbital, Weapons platform
+--Orphanage
+--Palace
+--Park
+--Parliament
+--Pier
+--Pigsty
+--Police/Fire station
+--Portal
+--Post office
+--Power plant
+--Prison
+--Prison camps
+--Pub / Tavern / Restaurant
+--Public hall / house
+--Quarry
+--Racing track / Hippodrome
+--Railroad
+--Refinery / Industrial complex
+--Reservoir
+--Retirement home
+--Road
+--Room, Animal, Apiary
+--Room, Animal, Aquarium
+--Room, Animal, Aviary
+--Room, Animal, Dovecot
+--Room, Animal, Enclosure
+--Room, Animal, Insect Room
+--Room, Animal, Menagerie
+--Room, Animal, Pen
+--Room, Animal, Stable
+--Room, Animal, Tackroom
+--Room, Chamber, Council
+--Room, Chamber, Execution
+--Room, Chamber, Teleportation
+--Room, Chamber, Torture
+--Room, Common, Antechamber
+--Room, Common, Attic
+--Room, Common, Balcony
+--Room, Common, Basement
+--Room, Common, Bathroom
+--Room, Common, Bedroom
+--Room, Common, Boiler room
+--Room, Common, Boudoir
+--Room, Common, Broom Closet
+--Room, Common, Cellar
+--Room, Common, Cloak room
+--Room, Common, Closet / Wardrobe
+--Room, Common, Conservatory
+--Room, Common, Dining Room
+--Room, Common, Dressing room
+--Room, Common, Elevator / Lift
+--Room, Common, Family Room
+--Room, Common, Gameroom
+--Room, Common, Garage
+--Room, Common, Garderobe
+--Room, Common, Green Room
+--Room, Common, Hall
+--Room, Common, Kitchen
+--Room, Common, Living Room
+--Room, Common, Office
+--Room, Common, Pantry
+--Room, Common, Parlour
+--Room, Common, Reception
+--Room, Common, Sauna
+--Room, Common, Smoking Room
+--Room, Common, Solar
+--Room, Common, Spa
+--Room, Common, Stairwell/Staircase
+--Room, Common, Study
+--Room, Common, Swimming Pool
+--Room, Common, Tea Room
+--Room, Common, Toilet / WC
+--Room, Common, Undercroft
+--Room, Common, Utility Closet
+--Room, Common, Waiting room
+--Room, Common, Washing room / Laundry
+--Room, Common, Workshop
+--Room, Conference / Meeting Room
+--Room, Corridor, Junction
+--Room, Corridor, Section
+--Room, Corridor. Fork
+--Room, Court, Legal
+--Room, Dome, Living
+--Room, Dome, Terrarium
+--Room, Education, Auditorium
+--Room, Education, Classroom
+--Room, Education, Lecture Hall
+--Room, Education, Library
+--Room, Entertainment, Arcade
+--Room, Entertainment, Games court
+--Room, Entertainment, Holodeck
+--Room, Entertainment, Ice Ring
+--Room, Entertainment, Playroom
+--Room, Hall, Banquet
+--Room, Hall, Dance
+--Room, Hall, Mead
+--Room, Hall, Throne Room
+--Room, Lab, Alchemical
+--Room, Lab, Chemistry
+--Room, Lab, Scientific
+--Room, Medical, Apothecary
+--Room, Medical, Delivery Room
+--Room, Medical, Diagnostic / Imaging
+--Room, Medical, ER
+--Room, Medical, Examination
+--Room, Medical, ICU
+--Room, Medical, Laboratory
+--Room, Medical, Nursery
+--Room, Medical, Recovery Room
+--Room, Medical, Surgery Theatre
+--Room, Medical, Ward
+--Room, Military, Armoury
+--Room, Military, Command &amp; Control / CiC)
+--Room, Military, Gatehouse
+--Room, Military, Guardhouse
+--Room, Military, Mess hall
+--Room, Military, Wall section
+--Room, Military, War Room
+--Room, Natural, Cavern
+--Room, Outdoors, Alleyway
+--Room, Outdoors, Allotment
+--Room, Outdoors, Court
+--Room, Outdoors, Courtyard
+--Room, Outdoors, Garden
+--Room, Outdoors, Greenhouse
+--Room, Outdoors, Swimming pool
+--Room, Religious, Aisles
+--Room, Religious, Apse
+--Room, Religious, Chancel
+--Room, Religious, Chapel
+--Room, Religious, Choir stalls
+--Room, Religious, Clerestory
+--Room, Religious, Loft
+--Room, Religious, Mausoleum
+--Room, Religious, Monastic Cell
+--Room, Religious, Nave
+--Room, Religious, Pulpit
+--Room, Religious, Sanctuary
+--Room, Religious, Sanctum / Septum
+--Room, Religious, Shrine
+--Room, Religious, Steeple
+--Room, Religious, Tomb
+--Room, Religious, Transept
+--Room, Religious, Triforium
+--Room, Religious, Vestry
+--Room, Scientific, Laboratory
+--Room, Secret, Chamber
+--Room, Secret, Entry
+--Room, Secret, Passage
+--Room, Security, Cell
+--Room, Security, Safe
+--Room, Security, Saferoom
+--Room, Security, Treasury / Treasure Room
+--Room, Security, Vault
+--Room, Ship, Armourer Citadel
+--Room, Ship, Armoury
+--Room, Ship, Bilge
+--Room, Ship, Bridge
+--Room, Ship, Cabin
+--Room, Ship, Caboose
+--Room, Ship, Cannon / Gun deck
+--Room, Ship, Deck
+--Room, Ship, Engine Room
+--Room, Ship, Fire room
+--Room, Ship, Flying Bridge
+--Room, Ship, Forecastle
+--Room, Ship, Galley
+--Room, Ship, Gangway
+--Room, Ship, Gunroom
+--Room, Ship, Hold
+--Room, Ship, Magazine
+--Room, Ship, Maproom
+--Room, Ship, Navigation
+--Room, Ship, Operations
+--Room, Ship, Orlop
+--Room, Ship, Prominade
+--Room, Ship, Quarters, Captain
+--Room, Ship, Quarters, Crew
+--Room, Ship, Quarters, Officer
+--Room, Ship, Saferoom
+--Room, Ship, Sick bay
+--Room, Ship, Steerage
+--Room, Ship, Wardroom
+--Room, Special, Buttery
+--Room, Special, Catacomb
+--Room, Special, Counting House
+--Room, Special, Crawlspace / Jefferies tube
+--Room, Special, Crypt
+--Room, Special, Engineering
+--Room, Special, Factory Floor
+--Room, Special, Forge
+--Room, Special, Furnace / incinerator
+--Room, Special, Ice house
+--Room, Special, Observatory
+--Room, Special, Oratory / Solar
+--Room, Special, Postroom
+--Room, Special, Scullery
+--Room, Special, Server Room
+--Room, Special, Trophies room
+--Room, Storage, Freezer
+--Room, Storage, Loading Bay
+--Room, Storage, Other
+--Room, Storage, Warehouse
+--Room, Studio, Art
+--Room, Studio, Film
+--Room, Studio, Music
+--Room, Studio, Other
+--Room, Theatre, Box
+--Room, Theatre, Hall
+--Room, Theatre, Home
+--Room, Theatre, Stage
+--Room, Tower, Clock
+--Room, Tower, Other
+--Room, Tower, Wizard
+--Room, Training, Gym
+--Room, Training, Sparring
+--School
+--Seaport
+--Sewer, network
+--Sewer, section
+--Shed
+--Sheepfold
+--Shelter
+--Shop, Cobbler
+--Shop, Generic
+--Shop, Magic
+--Shop, Tailor
+--Shopping mall / Commercial Complex
+--Shrine
+--Skyscraper
+--Slaughterhouse
+--Smelter
+--Spaceport
+--Spot
+--Stables
+--Stadium
+--Statue
+--Storage house / Silo
+--Street
+--Supermarket / Megastore
+--Tattoo Parlor
+--Technology Complex
+--Temple / Church
+--Temple / Religious complex
+--Theatre / Concert hall
+--Theme park / Entertainment complex
+--Timberyard
+--Tolls
+--Tomb
+--Tower
+--Tower, Guard
+--Tower, Mage
+--Tower, Telecomms
+--Tower, Wall
+--Tower, Water
+--Transportation hub
+--Transportation station
+--Tree
+--Tree house
+--Tunnel
+--University / Educational complex
+--Viewpoint
+--Vineyard / Orchard
+--Wall section
+--Warehouse / Granary
+--Warehouse, Commercial
+--Warehouse, Industrial
+--Warehouse, Massive / Storage complex
+--Warehouse, Residential
+--Water pump / Well, Large
+--Well
+--Workshop
+--World wonder
+
+-Genres
+--Flintlock
+--Supernatural
+--Neo Noir
+--Space Opera
+--Steampunk
+--Sword &amp; Sorcery
+--Oriental
+--Historical
+--Clockpunk
+--Religious
+--Adult 18+
+--Cyberpunk
+--Horror
+--Political
+--Mecha
+--Gothic
+--Post Apocalyptic
+--Child Safe
+--Fantasy, Dark
+--Isekai
+--Subversion
+--Biopunk
+--Science Fantasy
+--Stealth
+--Alternative History
+--Fanfiction
+--Solarpunk
+--Crime
+--Science Fiction
+--Fantasy, Urban
+--Science Fiction, Modern
+--Post-modern
+--Speculative
+--Slice of Life
+--Ancient
+--Dystopia
+--Fairy tale
+--Literature RPG
+--MagiPunk
+--Medieval
+--Fantasy
+--Informational
+--Urban
+--Soft Magic
+--Fantasy, High Magic
+--Young Adult (YA)
+--Transhumanism
+--Military
+--Dieselpunk
+--Victorian
+--Superheroic
+--Exploration
+--Weird
+--Atompunk
+--Hard Science
+--Fantasy, Romantic
+--Decopunk
+--Fantasy, Low Magic
+--Comedy
+--Hard Magic
+--Afrofuturism
+--Surreal
+--Western
+--Modern

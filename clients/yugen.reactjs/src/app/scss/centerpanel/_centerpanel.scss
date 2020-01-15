@@ -3,6 +3,7 @@
     margin-top: 50px;
     display: flex;
     justify-content: center;
+    transition: 0.5s;
     .content {
         margin-top: 20px;;
         width: 70%;
@@ -35,6 +36,7 @@
     #ce-panel {
         font-size: 1.2rem !important;
         justify-content: inherit;
+        transition: 0.5s;
         .right {
             margin-left: auto;
         }
