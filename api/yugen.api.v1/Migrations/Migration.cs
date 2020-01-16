@@ -33,6 +33,7 @@ namespace yugen.api.v1.Migrations
             InsertData<WorldDTO>("worlds");
             InsertData<BookDTO>("books");
             InsertData<ChapterDTO>("chapters");
+            InsertData<UserDTO>("users");
             return _db;
         }
 

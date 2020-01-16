@@ -15,15 +15,7 @@ namespace yugen.api.v1.Services.Repositories
     {
         private const string Collection = "chapters";
         public ChapterRepository(AppDbContext context) : base(context, Collection)
-        {
-            /* 
-             * If it is the first time creating the collection uncomment line below this block comment.
-             * This line below will eventually have an if the collection hasn't been created to create it and 
-             * seed the database with generic information. 
-            */
-
-            //context.DB().CreateCollection(Collection);
-        }
+        {}
         public IEnumerable<ChapterDTO> GetChaptersByBookId(string bookId)
         {
             return _context.Find(chapter => chapter.BookId == bookId).ToList();

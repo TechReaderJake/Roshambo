@@ -6,10 +6,12 @@ using yugen.shared.domain;
 
 namespace yugen.tests.domain
 {
+    [TestFixture]
     public class EmailTests
     {
         Email email;
 
+        [Test]
         [TestCase(5, 10)]
         [TestCase(10, 20)]
         [TestCase(40, 230)]
@@ -22,6 +24,7 @@ namespace yugen.tests.domain
             Assert.DoesNotThrow(delegate { email = new Email(validemail); });
         }
 
+        [Test]
         [TestCase(3, 3)]
         [TestCase(63, 251)]
         public void BoundaryEdges(int locallength, int domainlength)
@@ -32,6 +35,7 @@ namespace yugen.tests.domain
             Assert.DoesNotThrow(delegate { email = new Email(validemail); });
         }
 
+        [Test]
         [TestCase("Bob@gmail.com")]
         [TestCase("yello_liz-123@hookbook.com")]
         [TestCase("smi-2392_@jimnew.com")]
@@ -40,6 +44,7 @@ namespace yugen.tests.domain
             Assert.DoesNotThrow(delegate { email = new Email(value); });
         }
 
+        [Test]
         [TestCase(0)]
         [TestCase(2)]
         [TestCase(70)]
@@ -53,6 +58,7 @@ namespace yugen.tests.domain
             Assert.Catch(delegate { email = new Email(validemail); });
         }
 
+        [Test]
         [TestCase("9fdd")]
         [TestCase("12dssa")]
         [TestCase("$%^#&*@!")]

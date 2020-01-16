@@ -6,10 +6,12 @@ using yugen.shared.domain;
 
 namespace yugen.tests.domain
 {
+    [TestFixture]
     public class PasswordTests
     {
         Password password;
 
+        [Test]
         [TestCase(8)]
         [TestCase(12)]
         [TestCase(60)]
@@ -22,6 +24,7 @@ namespace yugen.tests.domain
             Assert.DoesNotThrow(delegate { password = new Password(validname); });
         }
 
+        [Test]
         [TestCase(5)]
         [TestCase(255)]
         public void BoundaryEdges(int length)
@@ -30,6 +33,7 @@ namespace yugen.tests.domain
             Assert.DoesNotThrow(delegate { password = new Password(bounds); });
         }
 
+        [Test]
         [TestCase("Bob23aa")]
         [TestCase("Big Natica socess")]
         [TestCase("Big24345")]
@@ -39,6 +43,7 @@ namespace yugen.tests.domain
             Assert.DoesNotThrow(delegate { password = new Password(value); });
         }
 
+        [Test]
         [TestCase(0)]
         [TestCase(4)]
         [TestCase(256)]
@@ -50,6 +55,7 @@ namespace yugen.tests.domain
             Assert.Catch(delegate { password = new Password(bounds); });
         }
 
+        [Test]
         [TestCase("\n \t")]
         [TestCase("\n")]
         public void InvalidCharacters(string value)

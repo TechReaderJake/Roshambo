@@ -6,10 +6,11 @@ using yugen.shared.domain;
 
 namespace yugen.tests.domain
 {
+    [TestFixture]
     public class DescriptionTests
     {
         Description description;
-
+        [Test]
         [TestCase(12)]
         [TestCase(20)]
         [TestCase(50)]
@@ -20,6 +21,7 @@ namespace yugen.tests.domain
             Assert.DoesNotThrow(delegate { description = new Description(validname); });
         }
 
+        [Test]
         [TestCase(10)]
         [TestCase(255)]
         public void BoundaryEdges(int length)
@@ -28,6 +30,7 @@ namespace yugen.tests.domain
             Assert.DoesNotThrow(delegate { description = new Description(bounds); });
         }
 
+        [Test]
         [TestCase("Bob is large in stature.")]
         [TestCase("Big Natica socess.")]
         [TestCase("Big is to big to be contained.")]
@@ -36,6 +39,7 @@ namespace yugen.tests.domain
             Assert.DoesNotThrow(delegate { description = new Description(value); });
         }
 
+        [Test]
         [TestCase(0)]
         [TestCase(9)]
         [TestCase(256)]
@@ -48,6 +52,7 @@ namespace yugen.tests.domain
             Assert.Catch(delegate { description = new Description(bounds); });
         }
 
+        [Test]
         [TestCase("9fdd")]
         [TestCase("12dssa")]
         [TestCase("$%^#&*@!")]

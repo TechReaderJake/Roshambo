@@ -12,6 +12,7 @@ namespace yugen.api.v1.Services
     /// </summary>
     public interface IUnitOfWork : IDisposable
     {
+        IUserRepository Users { get;  }
         IBookRepository Books { get; }
         IWorldRepository Worlds { get; }
         IChapterRepository Chapters { get; }

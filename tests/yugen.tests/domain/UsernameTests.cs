@@ -7,10 +7,12 @@ using yugen.shared.domain;
 namespace yugen.tests.domain
 {
     // Test normal behavior, boundary behavior, invalid input, and extreme values
+    [TestFixture]
     public class UsernameTests
     {
         Username name;
 
+        [Test]
         [TestCase(5)]
         [TestCase(12)]
         [TestCase(30)]
@@ -21,6 +23,7 @@ namespace yugen.tests.domain
             Assert.DoesNotThrow(delegate { name = new Username(validname); });
         }
 
+        [Test]
         [TestCase(2)]
         [TestCase(45)]
         public void BoundaryEdges(int length)
@@ -29,6 +32,7 @@ namespace yugen.tests.domain
             Assert.DoesNotThrow(delegate { name = new Username(bounds); });
         }
 
+        [Test]
         [TestCase("Bob")]
         [TestCase("Big24345")]
         public void ValidCharacters(string value)
@@ -36,6 +40,7 @@ namespace yugen.tests.domain
             Assert.DoesNotThrow(delegate { name = new Username(value); });
         }
 
+        [Test]
         [TestCase(0)]
         [TestCase(81)]
         [TestCase(100)]
@@ -48,6 +53,7 @@ namespace yugen.tests.domain
             Assert.Catch(delegate { name = new Username(bounds); });
         }
 
+        [Test]
         [TestCase("9fdd")]
         [TestCase("12dssa")]
         [TestCase("$%^#&*@!")]
