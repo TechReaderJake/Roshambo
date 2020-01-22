@@ -16,4 +16,8 @@
     <ProjectReference Include="..\..\shared\yugen.shared\yugen.shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="api\" />
+  </ItemGroup>
+
 </Project>

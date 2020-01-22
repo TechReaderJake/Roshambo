@@ -1,0 +1,12 @@
+[
+  {
+    "id": "5ddb47afc97d140d6c72c2f2",
+    "firstname": "John",
+    "lastname": "Doe",
+    "penname": "JDoe",
+    "email": "jd@email.com",
+    "password": "fakepass",
+    "created": "2019-09-23T18:25:43.511Z",
+    "modified": "2019-09-23T18:25:43.511Z"
+  }
+]
