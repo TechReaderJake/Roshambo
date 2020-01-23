@@ -1,8 +1,8 @@
 import React from 'react';
 import { themes } from '../Themes';
 
-export const UserContext = React.createContext({});
 export const WorldContext = React.createContext("");
+export const UserContext = React.createContext({});
 export const BookContext = React.createContext("");
 export const ThemeContext = React.createContext(themes.night);
 
