@@ -1,0 +1,27 @@
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    .parallax {
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 400px;
+        background-image: url(https://snow.edu/presidential-search/images/noyes-2000.jpg);
+    }
+    .overlay {
+        background-color: rgba(30,55,108, .5);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+}
