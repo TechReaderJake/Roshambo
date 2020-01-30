@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function Banner() {
-    return (<div class="banner">
+    return (<div className="banner">
       <div className="overlay">
          {/* <div class="logo">
             <picture>
@@ -14,10 +14,10 @@ export default function Banner() {
       </div>
        {/* <div className="parallax"></div> */}
       <picture>
-         <source srcset="https://snow.edu/presidential-search/images/noyes-2000.jpg" media="(min-width: 1400px)" />
-         <source srcset="https://snow.edu/presidential-search/images/noyes-1400.jpg" media="(min-width: 769px)" />
-         <source srcset="https://snow.edu/presidential-search/images/noyes-800.jpg" media="(min-width: 577px)" />
-         <img srcset="https://snow.edu/presidential-search/images/noyes-600.jpg" alt="responsive" class="d-block img-fluid" />
+         <source srcSet="https://snow.edu/presidential-search/images/noyes-2000.jpg" media="(min-width: 1400px)" />
+         <source srcSet="https://snow.edu/presidential-search/images/noyes-1400.jpg" media="(min-width: 769px)" />
+         <source srcSet="https://snow.edu/presidential-search/images/noyes-800.jpg" media="(min-width: 577px)" />
+         <img srcSet="https://snow.edu/presidential-search/images/noyes-600.jpg" alt="responsive" className="d-block img-fluid" />
       </picture>
    </div>)
 }

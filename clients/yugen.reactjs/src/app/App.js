@@ -15,10 +15,10 @@ class App extends React.Component {
       <Router>
       <div>
         <Banner />
-        <nav>
-          <ul>
+        <nav className="container">
+          <ul className="breadcrumb">
             <li>
-              <NavLink to="/">Home</NavLink>
+              <NavLink to="/">Worlds</NavLink>
             </li>
             <li>
               <NavLink to="/about">About</NavLink>
@@ -39,7 +39,7 @@ class App extends React.Component {
             <Users />
           </Route>
           <Route path="/">
-            <Home />
+              <Home />
           </Route>
         </Switch>
       </div>
@@ -48,7 +48,7 @@ class App extends React.Component {
   }
 }
 function Home() {
-  return           <div className="card-container">
+  return <div className="container"><div className="card-container">
   <Card img="https://via.placeholder.com/900x900?text=Cover" />
   <Card />
   <Card />
@@ -59,6 +59,7 @@ function Home() {
   <Card img="https://via.placeholder.com/900x900?text=Cover" />
   <Card action={true}/>
   
+  </div>
 </div>
 }
 function About() {
