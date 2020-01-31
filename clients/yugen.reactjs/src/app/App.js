@@ -1,6 +1,7 @@
 import React from 'react'
 import Banner from './layouts/banner'
 import Card from './components/card'
+import Toolbar from './components/toolbar'
 import './styles/app.scss'
 import {
   BrowserRouter as Router,
@@ -14,6 +15,7 @@ class App extends React.Component {
     return (
       <Router>
       <div>
+        <Toolbar />
         <Banner />
         <nav className="container">
           <ul className="breadcrumb">
