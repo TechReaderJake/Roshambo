@@ -1,15 +1,27 @@
 import React from 'react'
 
-export default function Tooltip () {
-    return ( <div>
-        <div class="tooltip">Top<span class="tooltiptext tooltip-top">Tooltip text</span></div>
-
-        <div class="tooltip">Right<span class="tooltiptext tooltip-right">Tooltip text</span></div>
-
-        <div class="tooltip">Bottom<span class="tooltiptext tooltip-bottom">Tooltip text</span></div>
-
-        <div class="tooltip">Left<span class="tooltiptext tooltip-left">Tooltip text</span></div>
-
-        <div class="tooltip">Right<span class="tooltiptext tooltip-right">Tooltip text</span></div></div>
+export default function Tooltip (props) {
+    let classValue = "tooltip-top";
+    switch(props.position)
+    {
+        case "right":
+            classValue = "tooltip-right"
+            break
+        case "bottom":
+            classValue = "tooltip-bottom"
+            break
+        case "left":
+            classValue = "tooltip-left"
+            break
+        default:
+            break
+    }
+    return ( 
+        <div className="tooltip">
+            {props.children}
+            <span className={"tooltiptext " + classValue}>
+                {props.msg}
+            </span>
+        </div>
     )
 }

@@ -30,7 +30,6 @@ class App extends React.Component {
               <NavLink to="/users">Users</NavLink>
             </li>
           </ul>
-          <Tooltip />
         </nav>
 
         {/* A <Switch> looks through its children <Route>s and
