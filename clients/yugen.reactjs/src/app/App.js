@@ -2,6 +2,7 @@ import React from 'react'
 import Banner from './layouts/banner'
 import Card from './components/card'
 import Toolbar from './components/toolbar'
+import Tooltip from './components/tooltip'
 import './styles/app.scss'
 import {
   BrowserRouter as Router,
@@ -29,6 +30,7 @@ class App extends React.Component {
               <NavLink to="/users">Users</NavLink>
             </li>
           </ul>
+          <Tooltip />
         </nav>
 
         {/* A <Switch> looks through its children <Route>s and
