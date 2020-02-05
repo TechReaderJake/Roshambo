@@ -72,6 +72,51 @@ class App extends React.Component {
     )
   }
 }
+
+// const CardImg = ({img, ...props}) => {
+//   if (img)
+//     return <img src={img} alt={alt} />
+//   return <img src="https://via.placeholder.com/900x900?text=Default" alt="default" />
+// }
+// const Card = ({children, ...props}) => ( 
+//     <div className='card' {...props}>
+//       {children}
+//     </div>
+// )
+
+// const CardWrapper = ({ type, ...props}) => {
+//   let children = React.Children.toArray(props.children)
+//   children.push(
+//     <Card>
+//       <button className="action-btn" title="Add Card Action">+</button>
+//     </Card>
+//   )
+//   return (
+//     <div className="card-container" {...type}>
+//       {children}
+//     </div>
+//   )
+// }
+
+// function Test() {
+//   return (
+//     <CardWrapper type="world">
+//       {worlds.map(({id, img, name}) => {
+//         return (
+//           <NavLink key={id} to={"/worlds/" + id}>
+//             <Card>
+//                 <figure>
+//                   <CardImg img={img} alt={name} />
+//                   <figcaption>{name}</figcaption>
+//                 </figure>
+//             </Card>
+//           </NavLink>
+//         )
+//       })}
+//     </CardWrapper>
+//   )
+// }
+
 function Home() {
   return (
     <div className="card-container">

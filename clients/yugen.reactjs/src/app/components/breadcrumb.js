@@ -1,6 +1,22 @@
 import React from 'react'
-import useBreadcrumb from './useBreadcrumb'
-import BreadcrumbCollapser from './breadcrumbCollapser'
+import { MdMoreHoriz } from 'react-icons/md'
+import { useState } from 'react'
+
+// const useBreadcrumb = () => {
+//     const [expanded, setExpanded] = useState(false)
+//     const open = () => setExpanded(true)
+
+//     return {
+//         expanded,
+//         open,
+//     }
+// }
+
+const BreadcrumbCollapser = (props) => (
+  <li className='breadcrumb-collapser' {...props}>
+      <MdMoreHoriz />
+  </li>
+)
 
 const BreadcrumbItem = ({ children, ...props }) => (
   <li className='breadcrumb-item' {...props}>
@@ -17,7 +33,9 @@ const BreadcrumbSeparator = ({ children, ...props }) => (
 const Breadcrumb = ({ separator = '/', collapse = {}, ...props }) => {
   let children = React.Children.toArray(props.children)
 
-  const { expanded, open } = useBreadcrumb()
+  //const { expanded, open } = useBreadcrumb()
+  const [expanded, setExpanded] = useState(false)
+  const open = () => setExpanded(true)
 
   const { itemsBefore = 2, itemsAfter = 2, max = 4 } = collapse
 

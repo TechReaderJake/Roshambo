@@ -1,14 +1,10 @@
 import React from 'react'
 import { Link } from '@reach/router'
 
-export default function Card (props) {
-    let classNames = "card book-card"
+const Card = ({ action, img, ...props}) => {
+    let classNames = "card"
     let output = <img src="https://via.placeholder.com/900x900?text=Default" alt="default" />
-    if(props.action !== undefined)
-    {
-        return <div className={classNames}><button className="action-btn" title="Add Card Action">+</button></div>
-    }
-    output = props.img !== undefined ? <img src={props.img} alt="cover" /> : output
+    output = img !== undefined ? <img src={img} alt="cover" /> : output
     return <Link to="/about">
             <div className={classNames}>
             <figure>
@@ -20,6 +16,7 @@ export default function Card (props) {
     </Link>
 }
 
+export default Card
 
 
 
