@@ -1,69 +1,91 @@
 import React from 'react'
+import { Link, Router } from '@reach/router'
+import { MdHome, MdSettings, MdInfo, MdWeb, MdEmail, MdAssignment } from 'react-icons/md'
+import ControlCenter from './components/control-center'
 import Banner from './layouts/banner'
+import Breadcrumb from './components/breadcrumb'
 import Card from './components/card'
-import Toolbar from './components/toolbar'
-import Tooltip from './components/tooltip'
 import './styles/app.scss'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  NavLink
-} from "react-router-dom";
+
+const NavLink = props => (
+  <Link
+    {...props}
+    getProps={({ isCurrent }) => {
+      // the object returned here is passed to the
+      // anchor element's props
+      return {
+        style: {
+          color: isCurrent ? "red" : "blue"
+        }
+      };
+    }}
+  />
+);
+
+const options = {
+  icons: {
+    Worlds: MdHome,
+    Users: MdSettings,
+    About: MdInfo,
+    Blog: MdWeb,
+    Contact: MdEmail,
+    Dashboard: MdAssignment,
+  },
+  items: [
+    { to: '/', label: 'Worlds' },
+    { to: '/users', label: 'Users' },
+    { to: '/dashboard/about', label: 'About' },
+    { to: '/blog', label: 'Blog'},
+    { to: '/contact', label: 'Contact'},
+    { to: '/dashboard', label: 'Dashboard'},
+  ],
+}
 
 class App extends React.Component {
   render() {
-    return (
-      <Router>
-      <div>
-        <Toolbar />
-        <Banner />
-        <nav className="container">
-          <ul className="breadcrumb">
-            <li>
-              <NavLink to="/">Worlds</NavLink>
-            </li>
-            <li>
-              <NavLink to="/about">About</NavLink>
-            </li>
-            <li>
-              <NavLink to="/users">Users</NavLink>
-            </li>
-          </ul>
-        </nav>
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
-          <Route path="/">
-              <Home />
-          </Route>
-        </Switch>
+    return ( 
+    <div className='app'>
+      <ControlCenter />
+      <Banner />
+      <div className='content'>
+        <Breadcrumb separator='/'>
+          {options.items.map(({ to, label }) => {
+            const Icon = options.icons[label]
+            return (
+              <div key={to} className='d-flex'>
+                {Icon && <Icon />}
+                <NavLink to={to}>{label}</NavLink>
+              </div>
+            )
+          })}
+        </Breadcrumb>
+        <Router>
+          <Home path='/' />
+          <Users path={options.items[1].to} />
+          <About path={options.items[2].to} />
+          <About path={options.items[3].to} />
+          <About path={options.items[4].to} />
+          <About path={options.items[5].to} />
+        </Router>
       </div>
-    </Router>
+    </div>
     )
   }
 }
 function Home() {
-  return <div className="container"><div className="card-container">
-  <Card img="https://via.placeholder.com/900x900?text=Cover" />
-  <Card />
-  <Card />
-  <Card />
-  <Card />
-  <Card img="https://via.placeholder.com/900x900?text=Cover" />
-  <Card />
-  <Card img="https://via.placeholder.com/900x900?text=Cover" />
-  <Card action={true}/>
-  
-  </div>
-</div>
+  return (
+    <div className="card-container">
+      <Card img="https://via.placeholder.com/900x900?text=Cover" />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card img="https://via.placeholder.com/900x900?text=Cover" />
+      <Card />
+      <Card img="https://via.placeholder.com/900x900?text=Cover" />
+      <Card action={true}/>
+    </div>
+  )
 }
 function About() {
   return <h2>About</h2>;

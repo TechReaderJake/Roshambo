@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from '@reach/router'
 
 export default function Card (props) {
     let classNames = "card book-card"
@@ -9,7 +9,7 @@ export default function Card (props) {
         return <div className={classNames}><button className="action-btn" title="Add Card Action">+</button></div>
     }
     output = props.img !== undefined ? <img src={props.img} alt="cover" /> : output
-    return <NavLink to="/about">
+    return <Link to="/about">
             <div className={classNames}>
             <figure>
                 {output}
@@ -17,7 +17,7 @@ export default function Card (props) {
                 <figcaption>Some Caption s</figcaption>
             </figure>
             </div>
-    </NavLink>
+    </Link>
 }
 
 

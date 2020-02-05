@@ -1,0 +1,73 @@
+a {
+    text-decoration: none;
+    font-weight: 400;
+    color: #424548;
+    &:hover {
+        color: #1da2b3;
+    }
+}
+
+.d-flex {
+    display: flex;
+}
+#breadcrumb-nav {
+    position: sticky;
+    top: 0;
+}
+/* Style the list */
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #bbb;
+    li {
+        font-size: 18px;
+        a {
+            color: #0275d8;
+            text-decoration: none;
+        
+            /* Add a color on mouse-over */
+            &:hover {
+                color: #01447e;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+// /* Add a slash symbol (/) before/behind each list item */
+// ul.breadcrumb li+li:before {
+//     padding: 8px;
+//     color: black;
+//     content: "/\00a0";
+// }
+
+nav .breadcrumb {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+}
+.breadcrumb-item {
+    color: #333;
+    margin: 5px 6px;
+    user-select: none;
+}
+.breadcrumb-collapser {
+    display: flex;
+    align-items: center;
+    svg {
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+        color: #000;
+        width: 25px;
+        height: 25px;
+        &:hover, &:focus {
+            color: #999;
+            transform: scale(1.15);
+        }
+        &:active {
+            color: #333;
+        }
+    }
+}
