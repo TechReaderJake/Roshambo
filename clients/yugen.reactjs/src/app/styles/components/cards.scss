@@ -18,6 +18,10 @@ figure {
     margin-right: .5rem;
     justify-content: center;
     overflow: hidden;
+    &.world-card {
+        width: 200px;
+        height: 300px;
+    }
     &.book-card {
         width: 100px;
         height: 120px;

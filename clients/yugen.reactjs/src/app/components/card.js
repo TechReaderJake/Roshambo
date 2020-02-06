@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from '@reach/router'
 
-const Card = ({ action, img, ...props}) => {
+const Card = ({ action, img, cardType, ...props}) => {
     let classNames = "card"
     let output = <img src="https://via.placeholder.com/900x900?text=Default" alt="default" />
     output = img !== undefined ? <img src={img} alt="cover" /> : output
     return <Link to="/about">
-            <div className={classNames}>
+            <div className={classNames + " " + cardType}>
             <figure>
                 {output}
             {/* Can only handle 14 characters on small screen, 24 on large */}
