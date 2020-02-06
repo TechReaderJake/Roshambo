@@ -13,6 +13,7 @@ a {
 #breadcrumb-nav {
     position: sticky;
     top: 0;
+    z-index: 999;
 }
 /* Style the list */
 ul.breadcrumb {
@@ -52,6 +53,9 @@ nav .breadcrumb {
     color: #333;
     margin: 5px 6px;
     user-select: none;
+    svg {
+        align-self: center;
+    }
 }
 .breadcrumb-collapser {
     display: flex;
