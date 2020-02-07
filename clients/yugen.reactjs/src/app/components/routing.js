@@ -1,8 +1,8 @@
 import React from 'react'
+//import { Switch, Route, NavLink } from 'react-router-dom'
 import { Link, Router } from '@reach/router'
-import { MdHome, MdSettings, MdInfo, MdWeb, MdEmail, MdAssignment, MdArrowForward } from 'react-icons/md'
+import { MdHome, MdSettings, MdInfo, MdWeb, MdEmail, MdAssignment, MdArrowForward, MdAdd } from 'react-icons/md'
 import Breadcrumb from './breadcrumb'
-import Card from './card'
 
 const NavLink = props => (
     <Link
@@ -63,81 +63,25 @@ const Routing = () => (
 )
 
 export default Routing
-// const CardImg = ({img, ...props}) => {
-//   if (img)
-//     return <img src={img} alt={alt} />
-//   return <img src="https://via.placeholder.com/900x900?text=Default" alt="default" />
-// }
-// const Card = ({children, ...props}) => ( 
-//     <div className='card' {...props}>
-//       {children}
-//     </div>
-// )
-
-// const CardWrapper = ({ type, ...props}) => {
-//   let children = React.Children.toArray(props.children)
-//   children.push(
-//     <Card>
-//       <button className="action-btn" title="Add Card Action">+</button>
-//     </Card>
-//   )
-//   return (
-//     <div className="card-container" {...type}>
-//       {children}
-//     </div>
-//   )
-// }
-
-// function Test() {
-//   return (
-//     <CardWrapper type="world">
-//       {worlds.map(({id, img, name}) => {
-//         return (
-//           <NavLink key={id} to={"/worlds/" + id}>
-//             <Card>
-//                 <figure>
-//                   <CardImg img={img} alt={name} />
-//                   <figcaption>{name}</figcaption>
-//                 </figure>
-//             </Card>
-//           </NavLink>
-//         )
-//       })}
-//     </CardWrapper>
-//   )
-// }
 
 function Home() {
     return (
-      <div className="card-container row">
-        <Card cardType="world-card" img="https://via.placeholder.com/900x900?text=Cover" />
-        <Card cardType="world-card" />
-        <Card cardType="world-card" />
-        <Card cardType="world-card" />
-        <Card cardType="world-card" />
-        <Card cardType="world-card" img="https://via.placeholder.com/900x900?text=Cover" />
-        <Card cardType="world-card" />
-        <Card cardType="world-card" img="https://via.placeholder.com/900x900?text=Cover" />
-        <Card cardType="world-card" action={true}/>
-      </div>
+      <h1>Hello Home!</h1>
     )
 }
 function About() {
     return (
-      <div class="container">
       <div class="grid-row">
         <div class="grid-item">
           <a class="wrapping-link" href="https://thecodeteam.com/projects/rex-ray/"></a>
           <div class="grid-item-wrapper">
             <div class="grid-item-container">
               <div class="grid-image-top rex-ray">
-                <span class="centered project-image-bg rex-ray-image"></span>
+                <span class="grid-image"></span>
               </div>
               <div class="grid-item-content">
                 <span class="item-title">REX-Ray</span>
-                <span class="item-category">Infrastructure as Code</span>
-                <span class="item-excerpt">REX-Ray is a container storage orchestration engine enabling persistence fo...</span>
-                <span class="more-info">View Project <i><MdArrowForward /></i></span>
+                <span class="more-info">View World <i><MdArrowForward /></i></span>
               </div>
             </div>
           </div>
@@ -254,7 +198,7 @@ function About() {
             </div>
           </div>
         </div>
-        <div class="grid-item">
+        <div class="grid-item" title="Envoy">
           <a class="wrapping-link" href="https://thecodeteam.com/projects/envoy/"></a>
           <div class="grid-item-wrapper">
             <div class="grid-item-container">
@@ -271,7 +215,7 @@ function About() {
           </div>
         </div>
         <div class="grid-item">
-          <a class="wrapping-link" href="https://thecodeteam.com/projects/istio/"></a>
+          {/* <a class="wrapping-link" href="https://thecodeteam.com/projects/istio/"></a>
           <div class="grid-item-wrapper">
             <div class="grid-item-container">
               <div class="grid-image-top istio">
@@ -284,10 +228,10 @@ function About() {
                 <span class="more-info">View Project <i class="fas fa-long-arrow-alt-right"></i></span>
               </div>
             </div>
-          </div>
+          </div> */}
+            <div class="action-btn" title="Create World"><MdAdd /></div>
         </div>
       </div>
-    </div>
     )
 }
 
