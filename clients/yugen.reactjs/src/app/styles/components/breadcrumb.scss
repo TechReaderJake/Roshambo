@@ -50,6 +50,7 @@ nav .breadcrumb {
     display: flex;
     align-items: center;
     border-radius: 3px;
+    flex-wrap: wrap;
 }
 .breadcrumb-item {
     color: #333;

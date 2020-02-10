@@ -2,6 +2,7 @@ import React from 'react'
 //import { Switch, Route, NavLink } from 'react-router-dom'
 import { Link, Router } from '@reach/router'
 import { MdHome, MdSettings, MdInfo, MdWeb, MdEmail, MdAssignment, MdArrowForward, MdAdd } from 'react-icons/md'
+import { GridRow, GridItem } from './grid'
 import Breadcrumb from './breadcrumb'
 
 const NavLink = props => (
@@ -72,6 +73,11 @@ function Home() {
 function About() {
     return (
       <div class="grid-row">
+        <div class="grid-item">
+            <div class="action-btn" title="Create World">
+              <MdAdd />
+            </div>
+        </div>
         <div class="grid-item">
           <a class="wrapping-link" href="https://thecodeteam.com/projects/rex-ray/"></a>
           <div class="grid-item-wrapper">
@@ -214,27 +220,53 @@ function About() {
             </div>
           </div>
         </div>
-        <div class="grid-item">
-          {/* <a class="wrapping-link" href="https://thecodeteam.com/projects/istio/"></a>
-          <div class="grid-item-wrapper">
-            <div class="grid-item-container">
-              <div class="grid-image-top istio">
-                <span class="centered project-image-bg istio-image"></span>
-              </div>
-              <div class="grid-item-content">
-                <span class="item-title">Istio</span>
-                <span class="item-category">Software Based Infrastructure</span>
-                <span class="item-excerpt">Connect, secure, control, and observe services.</span>
-                <span class="more-info">View Project <i class="fas fa-long-arrow-alt-right"></i></span>
-              </div>
-            </div>
-          </div> */}
-            <div class="action-btn" title="Create World"><MdAdd /></div>
-        </div>
       </div>
     )
 }
 
-function Users() {
-    return <h2>Users</h2>;
+class Users extends React.Component {
+  
+  state = {
+    worlds: [
+      { name: "Laughter in the night at the academy", type: "world", image: "https://images.pexels.com/photos/3645370/pexels-photo-3645370.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"},
+      { name: "Smiles", type: "world", image: "https://images.pexels.com/photos/3584992/pexels-photo-3584992.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"},
+      { name: "Choices", type: "world", image: "https://images.pexels.com/photos/3361200/pexels-photo-3361200.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"},
+      { name: "Ensign", type: "world", image: "https://images.pexels.com/photos/3497181/pexels-photo-3497181.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"},
+      { name: "Alamania", type: "world", image: "https://images.pexels.com/photos/3457299/pexels-photo-3457299.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"},
+    ],
+  }
+
+  componentDidUpdate() {
+
+  }
+
+  addItem = () => {
+    this.state.worlds.push({ 
+      name: "Laughter in the night at the academy", 
+      type: "world", 
+      image: "https://images.pexels.com/photos/3645370/pexels-photo-3645370.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    })
+    this.setState((prevState) => ({
+      worlds: prevState.worlds
+    }))
+    console.log(this.state.worlds)
+  }
+
+  render() {
+    let gridItems = {
+      action: {
+        title: "World Create",
+        click: this.addItem
+      }      
+    }
+    return (
+      <GridRow action={gridItems.action}>
+        {this.state.worlds.map(( child, index ) => {
+            return (
+              <GridItem key={index} item={child} />
+            )
+        })}
+      </GridRow>
+    );
+  }
 }

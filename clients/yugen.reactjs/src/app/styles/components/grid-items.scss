@@ -1,0 +1,237 @@
+@mixin gradients($l-value, $r-value)
+{
+    background: -webkit-gradient(linear,left top, left bottom,from($l-value),to($r-value));
+    background: -webkit-linear-gradient($l-value,$r-value);
+    background: -o-linear-gradient($l-value,$r-value);
+    background: linear-gradient($l-value,$r-value);
+}
+
+.grid-row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  a {
+    text-decoration: none;
+  }
+}
+
+.grid-item {
+  height: 400px;
+  flex-basis: 100%;
+  -ms-flex: auto;
+  width: 259px;
+  position: relative;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapping-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  color: currentColor;
+}
+
+.grid-item-wrapper {
+  -webkit-box-sizing: initial;
+  -moz-box-sizing: initial;
+  box-sizing: initial;
+  background: #bdbdbd;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  -webkit-transition: padding 0.15s cubic-bezier(0.4,0,0.2,1), margin 0.15s cubic-bezier(0.4,0,0.2,1), box-shadow 0.15s cubic-bezier(0.4,0,0.2,1);
+  transition: padding 0.15s cubic-bezier(0.4,0,0.2,1), margin 0.15s cubic-bezier(0.4,0,0.2,1), box-shadow 0.15s cubic-bezier(0.4,0,0.2,1);
+  position: relative;
+  border-radius: 5px;
+}
+
+.grid-item-container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.grid-image-top {
+  height: 80%;
+  width: 120%;
+  background-size: cover;
+  position: relative;
+  background-position: 50% 50%;
+  left: -10.5%;
+  top: -4.5%;
+  display: flex;
+  justify-content: center;
+//   .centered {
+//     text-align: center;
+//     transform: translate(-50%, -50%);
+//     background-size: contain;
+//     background-repeat: no-repeat;
+//     position: absolute;
+//     top: 54.5%;
+//     left: 50%;
+//     width: 60%;
+//     height: 60%;
+//     background-position: center;
+//   }
+  &.rex-ray {
+    @include gradients(#007DB8, #00447C)
+  }
+  &.sputnik {
+    @include gradients(#1AA9FB, #1785C4)
+  }
+  &.edgex {
+    @include gradients(#952f4c,#3e1a51);
+  }
+  &.openswitch {
+    @include gradients(#2db89a,#00793d);
+  }
+  &.scaleio {
+    @include gradients(#2e96dd,#326de6);
+  }
+  &.csi {
+    @include gradients(#464646,#000000);
+  }
+  &.kubernetes {
+    @include gradients(#09C1D1,#326DE6);
+  }
+  &.grpc {
+    @include gradients(#0CC1C8,#2E838C);
+  }
+  &.envoy {
+    @include gradients(#290B54,#130229);
+  }
+  &.istio {
+    @include gradients(#4A73C0,#466BB0);
+  }
+}
+.grid-image {
+  background: linear-gradient(#007DB8, #00447C);
+  //background-image: url(https://images.pexels.com/photos/3645370/pexels-photo-3645370.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+.grid-item-content {
+  padding: 0 10px;
+}
+
+.item-title {
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  display: block;
+}
+
+.item-category {
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.item-excerpt {
+  margin-bottom: 20px;
+  display: block;
+  font-size: 14px;
+}
+
+.more-info {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 5px;
+  padding-left: 0;
+  transition-duration: .5s;
+  font-size: 12px;
+  display: flex;
+  i {
+    padding-left: 5px;
+    transition-duration: .5s;
+    &::before {
+        font-size: 16px;
+      }
+  }
+}
+
+.grid-item:hover .more-info i {
+  padding-left: 20px;
+  transition-duration: .5s;
+}
+
+.grid-item:hover .grid-item-wrapper {
+  padding: 2% 2%;
+  margin: -2% -2%;
+}
+
+// @media(min-width: 1333px) {
+//   .grid-item {
+//     flex-basis: 20%;
+//   }
+// }
+
+// @media(min-width: 1073px) {
+//    .grid-item {
+//     flex-basis: 33.33%;
+//   }
+// }
+
+// @media(min-width: 815px) {
+//   .grid-item {
+//     flex-basis: 50%;
+//   }
+// }
+
+// @media(min-width: 555px) {
+//   .grid-item {
+//     flex-basis: 50%;
+//   }
+// }
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .grid-item {
+    flex-basis: 50%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .grid-item {
+    flex-basis: 33.33%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .grid-item {
+    flex-basis: 25%;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .grid-item {
+    flex-basis: 20%;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .grid-item {
+    flex-basis: 16.66%;
+  }
+}
+@media only screen and (min-width: 1700px) {
+  .grid-item {
+    flex-basis: 12.5%;
+  }
+}
